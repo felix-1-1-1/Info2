@@ -8,11 +8,13 @@ public class GUI extends JFrame{
     }
     public GUI()
     {
-        add(label1);
-
-        setVisible(true);
         setTitle("test");
         setSize(400,500);
+        addComponents();
+    }
 
+    void addComponents()
+    {
+        add(label1);
     }
 }
