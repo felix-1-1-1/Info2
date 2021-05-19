@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class GUI extends JFrame{
     private JPanel panel1;
-    private JLabel label1;
-    private JTree tree1;
+    private JSlider slider1;
+
 
     public static void main(String[] args){
         new GUI();
@@ -17,7 +17,6 @@ public class GUI extends JFrame{
 
     void addComponents()
     {
-        add(label1);
-        add(tree1);
+        add(slider1);
     }
 }
