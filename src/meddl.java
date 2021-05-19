@@ -1,5 +1,5 @@
 public class meddl {
     public static void main(String[] args){
-        System.out.println("Ausgabe aus der main()-Methode");
+        System.out.println("Ausgabe aus der main()-Methode");//test2
     }
 }
