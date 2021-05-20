@@ -5,9 +5,9 @@ public class sql {
         String url = "jdbc:mysql://127.0.0.1:8080/altschauerberg";
         String user ="root";
         String password = "";
-        System.out.println("Meddl");
+        //System.out.println("Meddl");
         //DriverManager.getConnection(url, user, password);
-        try(Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:8080/altschauerberg", user, password)){
+        try(Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.0.214:443/altschauerberg", "root", "")){
             System.out.println("Verbindung");
             String query = "SELECT * FROM noten";
             Statement stmt = conn.createStatement();
