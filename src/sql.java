@@ -7,7 +7,7 @@ public class sql {
         String password = "";
         //System.out.println("Meddl");
         //DriverManager.getConnection(url, user, password);
-        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/informatik projekt", "root", "test")){
+        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/informatik projekt", "root", "")){
             System.out.println("Verbindung");
             String query = "SELECT * FROM noten";
             Statement stmt = conn.createStatement();
