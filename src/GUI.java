@@ -2,8 +2,11 @@ import javax.swing.*;
 
 public class GUI extends JFrame{
     private JPanel panel1;
+    private JButton button1;
+    private JPasswordField passwordField1;
     private JLabel label1;
     private JTree tree1;
+    private JComboBox comboBox1;
 
     public static void main(String[] args){
         new GUI();
@@ -11,13 +14,13 @@ public class GUI extends JFrame{
     public GUI()
     {
         setTitle("test");
-        setSize(400,500);
+        setSize(500,500);
         addComponents();
     }
 
     void addComponents()
     {
-        add(label1);
-        add(tree1);
+        add(panel1);
+        //add(button2);
     }
 }
