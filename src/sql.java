@@ -8,7 +8,7 @@ public class sql {
         System.out.println("Meddl");
         //DriverManager.getConnection(url, user, password);
         try(Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:8080/altschauerberg", user, password)){
-            //System.out.println("Verbindung");
+            System.out.println("Verbindung");
             String query = "SELECT * FROM noten";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
