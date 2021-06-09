@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class sql {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://127.0.0.1:8080/altschauerberg";
+        String url = "jdbc:mysql://krvfg-sql.lerndaheim.de/altschauerberg";
         String user ="root";
         String password = "";
         //System.out.println("Meddl");
