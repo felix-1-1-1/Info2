@@ -2,12 +2,12 @@ import java.sql.*;
 
 public class sql {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://krvfg-sql.lerndaheim.de/altschauerberg";
+        String url = "jdbc:mysql://localhost:3306/informatik projekt";
         String user ="root";
         String password = "";
         //System.out.println("Meddl");
         //DriverManager.getConnection(url, user, password);
-        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/informatik projekt", "root", "")){
+        try(Connection conn = DriverManager.getConnection(url, user, password)){
             System.out.println("Verbindung");
             String query = "SELECT * FROM noten";
             Statement stmt = conn.createStatement();
