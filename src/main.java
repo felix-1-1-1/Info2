@@ -5,5 +5,7 @@ public class main {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         GUI GUI = new GUI();
         GUI.setVisible(true);
+        sql sql = new sql();
+
     }
 }
