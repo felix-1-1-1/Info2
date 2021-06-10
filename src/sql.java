@@ -15,7 +15,7 @@ public class sql {
         sql sql = new sql();
         sql.getGradesMündlich("Deutsch");
         sql.getGradesSchriftlich("Mathe");
-        System.out.println("Mündlich: " + sql.getGradesMündlich("Deutsch") + "  " + "Schriftlich" + sql.getGradesSchriftlich("Deutsch"));
+        System.out.println("Mündlich: " + sql.getGradesMündlich("Deutsch") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Deutsch"));
     }
 
 
