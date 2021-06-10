@@ -2,11 +2,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class KalenderGUI extends JFrame implements ActionListener{
+public class StundenplanGUI extends JFrame implements ActionListener{
     private JButton Zurueck;
     private JPanel JPanel1;
 
-    public KalenderGUI() {
+    public StundenplanGUI() {
         setTitle("test");
         setSize(500, 500);
         addComponents();
@@ -27,4 +27,4 @@ public class KalenderGUI extends JFrame implements ActionListener{
         add(JPanel1);
         //add(button2);
     }
-    }
+}
