@@ -13,9 +13,9 @@ public class sql {
 
     public static void main(String[] args) {
         sql sql = new sql();
-        sql.getGradesMündlich("Deutsch");
-        sql.getGradesSchriftlich("Mathe");
-        System.out.println("Mündlich: " + sql.getGradesMündlich("Deutsch") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Deutsch"));
+        //sql.getGradesMündlich("Deutsch");
+        //sql.getGradesSchriftlich("Mathe");
+        System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
     }
 
 
@@ -61,7 +61,7 @@ public class sql {
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'" + Fach + "'";
+            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Schriftlich' GROUP BY Fach HAVING Fach=" + "'" + Fach + "'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -84,6 +84,7 @@ public class sql {
         return averageSchriftl;
     }
 
+    //void addGrade(String Fach, int Punktzahl)
 
     /**
      *
