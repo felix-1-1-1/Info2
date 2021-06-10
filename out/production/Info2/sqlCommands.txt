@@ -1,0 +1,2 @@
+SELECT Fach, AVG(Punktzahl) FROM noten
+GROUP BY Fach
