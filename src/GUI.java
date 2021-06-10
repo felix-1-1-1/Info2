@@ -18,6 +18,7 @@ public class GUI extends JFrame{
         setTitle("test");
         setSize(500,500);
         addComponents();
+        setVisible(true);
     }
 
     void addComponents()
