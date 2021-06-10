@@ -3,7 +3,7 @@ import java.sql.*;
 public class sql {
     public static void main(String[] args) {
         sql sql = new sql();
-        sql.getConnection();
+        sql.getGrades("Mathe");
         //sql.executeQuery();
     }
 
@@ -14,7 +14,7 @@ public class sql {
     Connection conn;
 
 
-    void getConnection()
+    void getGrades(String Fach)
     { String url = "jdbc:mysql://localhost:3306/informatik projekt";
         String user ="root";
         String password = "";
@@ -24,7 +24,7 @@ public class sql {
             conn = conn2;
             System.out.println("Verbindung");
 
-            String query = "SELECT * FROM noten";
+            String query = "SELECT Fach, AVG(Punktzahl) FROM noten GROUP BY Fach HAVING Fach=" + "'"+Fach+"'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
