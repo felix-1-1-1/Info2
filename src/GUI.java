@@ -2,7 +2,9 @@ import javax.swing.*;
 
 public class GUI extends JFrame{
     private JPanel panel1;
-    private JButton button1;
+    private JButton Kalender;
+    private JButton Noten;
+    private JButton Stundenplan;
     private JPasswordField passwordField1;
     private JLabel label1;
     private JTree tree1;
