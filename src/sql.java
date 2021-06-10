@@ -30,6 +30,22 @@ public class sql {
             ResultSet rs = stmt.executeQuery(query);
             System.out.println("query");
 
+            int columns = rs.getMetaData().getColumnCount();
+            for(int i = 1; i<=columns; i++)
+                System.out.print(String.format("%-15s", rs.getMetaData().getColumnLabel(i)));
+
+            System.out.println();
+            System.out.println("----------------------------------------------------------------");
+
+            while(rs.next()) {
+                for(int i = 1; i<=columns; i++)
+                    System.out.print(String.format("%-15s", rs.getString(i)));
+                System.out.println();
+            }
+
+            rs.close();
+            stmt.close();
+
         }
         catch(SQLException ex){
             System.err.println(ex.getMessage());
