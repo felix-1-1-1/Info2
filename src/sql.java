@@ -4,9 +4,9 @@ public class sql {
     public static void main(String[] args) {
         sql sql = new sql();
         sql.getGradesMündlich("Deutsch");
-        //sql.getGradesSchriftlich("Deutsch");
+        sql.getGradesSchriftlich("Mathe");
         //sql.executeQuery();
-        System.out.println("TEST: "+sql.getGradesMündlich("Deutsch"));
+        System.out.println("Mündlich: "+sql.getGradesMündlich("Deutsch")+"  "+ "Schriftlich"+ sql.getGradesSchriftlich("Deutsch"));
 
     }
 
@@ -27,13 +27,13 @@ public class sql {
 
         try(Connection conn2 = DriverManager.getConnection(url, user, password)){
             conn = conn2;
-            System.out.println("Verbindung");
+            //System.out.println("Verbindung");
 
             String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'"+Fach+"'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            System.out.println("query");
+            //System.out.println("query");
 
             int columns = rs.getMetaData().getColumnCount();
            // for(int i = 1; i<=columns; i++)
@@ -47,7 +47,7 @@ public class sql {
                 {
                     averageMündl = rs.getDouble(2);
                    // System.out.print(String.format("%-15s", rs.getString(i)));
-                System.out.println();
+                //System.out.println();
             }}
             rs.close();
             stmt.close();
@@ -62,7 +62,7 @@ public class sql {
     return averageMündl;}
 
 
-    double getGradesSchrift(String Fach)
+    double getGradesSchriftlich(String Fach)
     { String url = "jdbc:mysql://localhost:3306/informatik projekt";
         String user ="root";
         String password = "";
@@ -72,13 +72,13 @@ public class sql {
 
         try(Connection conn2 = DriverManager.getConnection(url, user, password)){
             conn = conn2;
-            System.out.println("Verbindung");
+           // System.out.println("Verbindung");
 
             String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'"+Fach+"'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            System.out.println("query");
+            //System.out.println("query");
 
             int columns = rs.getMetaData().getColumnCount();
             // for(int i = 1; i<=columns; i++)
@@ -92,7 +92,7 @@ public class sql {
                 {
                     averageSchriftl = rs.getDouble(2);
                     // System.out.print(String.format("%-15s", rs.getString(i)));
-                    System.out.println();
+                    //System.out.println();
                 }}
             rs.close();
             stmt.close();
