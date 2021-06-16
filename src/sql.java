@@ -1,128 +1,90 @@
 import java.sql.*;
 
 public class sql {
-    public static void main(String[] args) {
-        sql sql = new sql();
-        sql.getGradesMündlich("Deutsch");
-        //sql.getGradesSchriftlich("Deutsch");
-        //sql.executeQuery();
-        System.out.println("TEST: "+sql.getGradesMündlich("Deutsch"));
-
-    }
-
-    public sql()
-    {
-
-    }
     Connection conn;
 
+    public sql() {
 
-    double getGradesMündlich(String Fach)
-    { String url = "jdbc:mysql://localhost:3306/informatik projekt";
-        String user ="root";
-        String password = "";
+    }
+
+    String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
+    String user = "root";
+    String password = "123";
+
+    public static void main(String[] args) {
+        sql sql = new sql();
+        //sql.getGradesMündlich("Deutsch");
+        //sql.getGradesSchriftlich("Mathe");
+        System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
+    }
+
+
+    double getGradesMündlich(String Fach) {
+
 
         double averageMündl = 0;
 
 
-        try(Connection conn2 = DriverManager.getConnection(url, user, password)){
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            System.out.println("Verbindung");
 
-            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'"+Fach+"'";
+            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'" + Fach + "'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            System.out.println("query");
 
             int columns = rs.getMetaData().getColumnCount();
-           // for(int i = 1; i<=columns; i++)
-             //   System.out.print(String.format("%-15s", rs.getMetaData().getColumnLabel(i)));
 
-           // System.out.println();
-            //System.out.println("-----------------------------------");
 
-            while(rs.next()) {
-                for(int i = 1; i<=columns; i++)
-                {
+            while (rs.next()) {
+                for (int i = 1; i <= columns; i++) {
                     averageMündl = rs.getDouble(2);
-                   // System.out.print(String.format("%-15s", rs.getString(i)));
-                System.out.println();
-            }}
+
+                }
+            }
             rs.close();
             stmt.close();
 
-        }
-
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             System.out.println("fail");
         }
 
-    return averageMündl;}
+        return averageMündl;
+    }
 
+    double getGradesSchriftlich(String Fach) {
 
-    double getGradesSchrift(String Fach)
-    { String url = "jdbc:mysql://localhost:3306/informatik projekt";
-        String user ="root";
-        String password = "";
 
         double averageSchriftl = 0;
 
 
-        try(Connection conn2 = DriverManager.getConnection(url, user, password)){
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            System.out.println("Verbindung");
-
-            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'"+Fach+"'";
+            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Schriftlich' GROUP BY Fach HAVING Fach=" + "'" + Fach + "'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            System.out.println("query");
-
             int columns = rs.getMetaData().getColumnCount();
-            // for(int i = 1; i<=columns; i++)
-            //   System.out.print(String.format("%-15s", rs.getMetaData().getColumnLabel(i)));
 
-            // System.out.println();
-            //System.out.println("-----------------------------------");
 
-            while(rs.next()) {
-                for(int i = 1; i<=columns; i++)
-                {
+            while (rs.next()) {
+                for (int i = 1; i <= columns; i++) {
                     averageSchriftl = rs.getDouble(2);
-                    // System.out.print(String.format("%-15s", rs.getString(i)));
-                    System.out.println();
-                }}
+                }
+            }
             rs.close();
             stmt.close();
 
-        }
-
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             System.out.println("fail");
         }
 
-        return averageSchriftl;}
-
-
-
-
-
-    void executeQuery()
-    {
-        try {
-        String query = "SELECT * FROM noten";
-        Statement stmt = conn.createStatement();
-        stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-        System.out.println("query");
-        }
-        catch (SQLException ex){System.out.println("fail");}
+        return averageSchriftl;
     }
 
-
+    //void addGrade(String Fach, int Punktzahl)
 
     /**
      *
