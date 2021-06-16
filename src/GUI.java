@@ -26,7 +26,9 @@ public class GUI extends JFrame implements ActionListener {
         Stundenplan.addActionListener(this);
 
 
+
     }
+
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Kalender){
            KalenderGUI kalender = new KalenderGUI();

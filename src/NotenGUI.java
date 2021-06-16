@@ -18,7 +18,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         setVisible(true);
         Zurueck.addActionListener(this);
         FachWahl.addActionListener(this);
-        FachWahl.setSelectedIndex(15);
+        FachWahl.setSelectedIndex(16);
         String comboBoxListe[] = {"Baden-Württemberg", "Bayern",
                 "Berlin", "Brandenburg", "Bremen",
                 "Hamburg", "Hessen", "Mecklenburg-Vorpommern",
@@ -36,11 +36,11 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     }
 
-    void addInput()
+    /*void addInput()
     {
-        sql.addGrade(FachWahl.getText(), NotenEingabe.getText());
+        sql.addGrade(this.FachWahl.GetItemText(this.FachWahl.SelectedItem), NotenEingabe.getText());
     }
-
+*/
     void addComponents()
     {
         add(JPanel1);

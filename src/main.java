@@ -5,6 +5,7 @@ public class main {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         GUI GUI = new GUI();
         GUI.setVisible(true);
+        GUI.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         sql sql = new sql();
 
     }
