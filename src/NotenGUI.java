@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 public class NotenGUI extends JFrame implements ActionListener{
     private JButton Zurueck;
     private JPanel JPanel1;
+    private JTextField NotenEingabe;
+    private JComboBox FachWahl;
+    private JButton Hinzufügen;
 
     public NotenGUI() {
         setTitle("test");
@@ -12,7 +15,13 @@ public class NotenGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
-
+        String comboBoxListe[] = {"Baden-Württemberg", "Bayern",
+                "Berlin", "Brandenburg", "Bremen",
+                "Hamburg", "Hessen", "Mecklenburg-Vorpommern",
+                "Niedersachsen", "Nordrhein-Westfalen", "Rheinland-Pfalz",
+                "Saarland", "Sachsen", "Sachsen-Anhalt",
+                "Schleswig-Holstein", "Thüringen"};
+        JComboBox FachWahl = new JComboBox(comboBoxListe);
 
     }
     public void actionPerformed(ActionEvent e) {
