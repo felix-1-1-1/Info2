@@ -11,23 +11,35 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     sql sql = new sql();
 
+    public static void main(String[] args)
+    {
+        NotenGUI notenGUI = new NotenGUI();
+        notenGUI.comboBox();
+
+    }
+
     public NotenGUI() {
         setTitle("test");
         setSize(500, 500);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+
+        String[] comboBoxListe = {"Deutsch", "Mathe"};
+        FachWahl = new JComboBox(comboBoxListe);
         FachWahl.addActionListener(this);
-        FachWahl.setSelectedIndex(16);
-        String comboBoxListe[] = {"Baden-Württemberg", "Bayern",
-                "Berlin", "Brandenburg", "Bremen",
-                "Hamburg", "Hessen", "Mecklenburg-Vorpommern",
-                "Niedersachsen", "Nordrhein-Westfalen", "Rheinland-Pfalz",
-                "Saarland", "Sachsen", "Sachsen-Anhalt",
-                "Schleswig-Holstein", "Thüringen"};
-        JComboBox FachWahl = new JComboBox(comboBoxListe);
+        FachWahl.setSelectedIndex(1);
+        FachWahl.addItem("Test");
+
+
 
     }
+
+    void comboBox()
+    {
+
+    }
+
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Zurueck){
             GUI Gui = new GUI();
@@ -45,5 +57,9 @@ public class NotenGUI extends JFrame implements ActionListener{
     {
         add(JPanel1);
         //add(button2);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
