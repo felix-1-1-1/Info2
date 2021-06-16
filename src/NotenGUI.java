@@ -9,6 +9,8 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JComboBox FachWahl;
     private JButton Hinzufügen;
 
+    sql sql = new sql();
+
     public NotenGUI() {
         setTitle("test");
         setSize(500, 500);
@@ -31,6 +33,12 @@ public class NotenGUI extends JFrame implements ActionListener{
         }
 
     }
+
+    void addInput()
+    {
+        sql.addGrade(FachWahl.getText(), NotenEingabe.getText());
+    }
+
     void addComponents()
     {
         add(JPanel1);
