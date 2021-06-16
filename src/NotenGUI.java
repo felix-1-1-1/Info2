@@ -15,6 +15,8 @@ public class NotenGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+        FachWahl.addActionListener(this);
+        FachWahl.setSelectedIndex(15);
         String comboBoxListe[] = {"Baden-Württemberg", "Bayern",
                 "Berlin", "Brandenburg", "Bremen",
                 "Hamburg", "Hessen", "Mecklenburg-Vorpommern",
