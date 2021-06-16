@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class sql {
     Connection conn;
@@ -15,9 +17,16 @@ public class sql {
         sql sql = new sql();
         //sql.getGradesMündlich("Deutsch");
         //sql.getGradesSchriftlich("Mathe");
-        System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
+        //System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
+        sql.addGrade("Englisch",10, "Schriftlich");
     }
 
+String getDate()
+{
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+    return dtf.format(now);
+}
 
     double getGradesMündlich(String Fach) {
 
@@ -84,7 +93,24 @@ public class sql {
         return averageSchriftl;
     }
 
-    //void addGrade(String Fach, int Punktzahl)
+    void addGrade(String Fach, int Punktzahl, String Typ)
+    {
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+            String query = "INSERT INTO `noten` (`PK`,  `Fach`, `Datum`, `Punktzahl`, `Typ`) VALUES (NULL, '"+Fach+"', '"+getDate()+"', '"+Punktzahl+"', '"+Typ+"');";
+            Statement stmt = conn.createStatement();
+            stmt = conn.createStatement();
+            int rs = stmt.executeUpdate(query);
+
+
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+    }
+
+
 
     /**
      *
