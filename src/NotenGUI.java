@@ -8,6 +8,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JTextField NotenEingabe;
     private JComboBox FachWahl;
     private JButton Hinzufügen;
+    private JComboBox Typ;
 
     sql sql;
 
@@ -44,6 +45,9 @@ public class NotenGUI extends JFrame implements ActionListener{
             Gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             this.setVisible(false);
+        }
+        if(e.getSource() == Hinzufügen){
+            addInput();
         }
 
     }
