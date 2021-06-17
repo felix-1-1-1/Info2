@@ -93,6 +93,8 @@ String getDate()
         return averageSchriftl;
     }
 
+
+
     double getGradesCombined(String Fach) {
         double averageCombined;
 

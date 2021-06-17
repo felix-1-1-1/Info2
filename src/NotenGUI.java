@@ -91,7 +91,16 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     void addInput()
     {
-        sql.addGrade((String)FachWahl.getSelectedItem(), Integer.parseInt(NotenEingabe.getText()), (String)Typ.getSelectedItem());
+        sql.addGrade((String)FachWahl.getSelectedItem(), checkValue(), (String)Typ.getSelectedItem());
+    }
+
+    int checkValue()
+    {
+        if(Integer.parseInt(NotenEingabe.getText())<15&&Integer.parseInt(NotenEingabe.getText())>0)
+        {
+            return  Integer.parseInt(NotenEingabe.getText());
+        }
+        return -1;
     }
 
     void addComponents()

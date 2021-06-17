@@ -17,9 +17,10 @@ public class GUI extends JFrame implements ActionListener {
     }
     public GUI()
     {
-        setTitle("test");
+        setTitle("Schulplaner");
         setSize(500,200);
         addComponents();
+        this.setLocationRelativeTo(null);
         setVisible(true);
         Kalender.addActionListener(this);
         Noten.addActionListener(this);
