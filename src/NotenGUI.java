@@ -24,6 +24,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+        Hinzufügen.addActionListener(this);
         sql=new sql();
 
 
