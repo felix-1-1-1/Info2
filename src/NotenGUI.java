@@ -8,7 +8,6 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JTextField NotenEingabe;
     private JComboBox FachWahl;
     private JButton Hinzufügen;
-    private JComboBox bookList;
 
     sql sql = new sql();
 
@@ -26,22 +25,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         setVisible(true);
         Zurueck.addActionListener(this);
 
-        String[] comboBoxListe = {"1", "2"};
-        FachWahl = new JComboBox(comboBoxListe);
-        FachWahl.addActionListener(this);
-        FachWahl.setSelectedIndex(0);
 
-        String[] bookTitles = new String[] {"Effective Java", "Head First Java",
-                "Thinking in Java", "Java for Dummies"};
-
-        JComboBox<String> bookList = new JComboBox<>(bookTitles);
-
-// add to the parent container (e.g. a JFrame):
-        add(bookList);
-
-// get the selected item:
-        String selectedBook = (String) bookList.getSelectedItem();
-        System.out.println("You seleted the book: " + selectedBook);
 
 
 
@@ -62,11 +46,11 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     }
 
-    /*void addInput()
+    void addInput()
     {
         sql.addGrade(this.FachWahl.GetItemText(this.FachWahl.SelectedItem), NotenEingabe.getText());
     }
-*/
+
     void addComponents()
     {
         add(JPanel1);
