@@ -9,6 +9,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JComboBox FachWahl;
     private JButton Hinzufügen;
     private JComboBox Typ;
+    private JTable table1;
 
     sql sql;
 
