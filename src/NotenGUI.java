@@ -22,7 +22,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     public NotenGUI() {
         setTitle("test");
-        setSize(500, 500);
+        setSize(550, 200);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
@@ -45,6 +45,8 @@ public class NotenGUI extends JFrame implements ActionListener{
         JScrollPane scrollPane = new JScrollPane(table);
         frame.getContentPane().add(scrollPane);
         frame.pack();
+        frame.setSize(500,350);
+
         frame.setVisible(true);
     }
 

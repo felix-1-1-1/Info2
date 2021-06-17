@@ -18,7 +18,7 @@ public class GUI extends JFrame implements ActionListener {
     public GUI()
     {
         setTitle("test");
-        setSize(500,500);
+        setSize(500,200);
         addComponents();
         setVisible(true);
         Kalender.addActionListener(this);
@@ -36,7 +36,7 @@ public class GUI extends JFrame implements ActionListener {
         }
         if(e.getSource() == Noten){
             NotenGUI noten = new NotenGUI();
-            noten.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            noten.setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.setVisible(false);        }
         if(e.getSource() == Stundenplan) {
             StundenplanGUI stundenplan = new StundenplanGUI();
