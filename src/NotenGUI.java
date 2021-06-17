@@ -9,7 +9,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JComboBox FachWahl;
     private JButton Hinzufügen;
     private JComboBox Typ;
-    private JTable NotenTabelle;
+    private JButton ergebnisseZeigen;
     private JPanel TablePanel;
 
     sql sql;
@@ -17,7 +17,6 @@ public class NotenGUI extends JFrame implements ActionListener{
     public static void main(String[] args)
     {
         NotenGUI notenGUI = new NotenGUI();
-        notenGUI.comboBox();
 
     }
 
@@ -26,21 +25,39 @@ public class NotenGUI extends JFrame implements ActionListener{
         setSize(500, 500);
         addComponents();
         setVisible(true);
-        TablePanel.setVisible(true);
         Zurueck.addActionListener(this);
         Hinzufügen.addActionListener(this);
+        ergebnisseZeigen.addActionListener(this);
         sql=new sql();
 
 
 
 
 
+
     }
 
-    void comboBox()
+    void showTable()
     {
-
+        JFrame frame = new JFrame("JTable Test");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        JTable table = createTable();
+        JScrollPane scrollPane = new JScrollPane(table);
+        frame.getContentPane().add(scrollPane);
+        frame.pack();
+        frame.setVisible(true);
     }
+
+    public static JTable createTable()
+    {
+        String[] columnNames = {"Fach", "Notenschnitt"};
+        Object[][] data = {{"Kathy", "Smith"},{"John", "Doe"}};
+        JTable table = new JTable(data, columnNames);
+        table.setFillsViewportHeight(true);
+
+        return table;
+    }
+
 
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Zurueck){
@@ -52,6 +69,8 @@ public class NotenGUI extends JFrame implements ActionListener{
         if(e.getSource() == Hinzufügen){
             addInput();
         }
+        if(e.getSource() == ergebnisseZeigen)
+        {showTable();}
 
     }
 

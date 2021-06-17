@@ -20,7 +20,7 @@
       </component>
       <component id="3cc7f" class="javax.swing.JTextField" binding="NotenEingabe">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="45"/>
           </grid>
         </constraints>
@@ -54,7 +54,7 @@
       </component>
       <component id="c90c9" class="javax.swing.JComboBox" binding="FachWahl">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="120" height="45"/>
           </grid>
         </constraints>
@@ -73,7 +73,7 @@
       </component>
       <component id="3398e" class="javax.swing.JComboBox" binding="Typ">
         <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="109" height="45"/>
           </grid>
         </constraints>
@@ -84,24 +84,14 @@
           </model>
         </properties>
       </component>
-      <grid id="9f697" binding="TablePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <component id="b49c6" class="javax.swing.JButton" binding="ergebnisseZeigen">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="f797f" class="javax.swing.JTable" binding="NotenTabelle">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-            </constraints>
-            <properties/>
-          </component>
-        </children>
-      </grid>
+        <properties>
+          <text value="Ergebnisse zeigen"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
