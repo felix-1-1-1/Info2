@@ -68,6 +68,15 @@
             <item value="Informatik"/>
             <item value="Latein"/>
             <item value="Religion"/>
+            <item value="P-Seminar"/>
+            <item value="W-Seminar"/>
+            <item value="Wirtschaft"/>
+            <item value="Geographie"/>
+            <item value="Geschichte"/>
+            <item value="Sozialkunde"/>
+            <item value="Französisch"/>
+            <item value="Latein"/>
+            <item value="Russisch"/>
           </model>
         </properties>
       </component>
