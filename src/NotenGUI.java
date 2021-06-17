@@ -48,10 +48,10 @@ public class NotenGUI extends JFrame implements ActionListener{
         frame.setVisible(true);
     }
 
-    public static JTable createTable()
+    public  JTable createTable()
     {
         String[] columnNames = {"Fach", "Notenschnitt"};
-        Object[][] data = {{"Kathy", "Smith"},{"John", "Doe"}};
+        Object[][] data = {{"Deutsch",sql.getGradesSchriftlich("Deutsch"),"Englisch","P-Seminar","W-Seminar","Informatik","Physik","Wirtschaft","Geographie","Geschichte","Sozialkunde","Französisch","Latein","Russisch","Religion"},{"John", "Doe"}};
         JTable table = new JTable(data, columnNames);
         table.setFillsViewportHeight(true);
 
