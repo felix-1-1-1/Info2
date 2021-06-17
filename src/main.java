@@ -6,7 +6,7 @@ public class main {
         GUI GUI = new GUI();
         GUI.setVisible(true);
         GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        sql sql = new sql();
+        sqlNoten sqlNoten = new sqlNoten();
 
     }
 }

@@ -2,10 +2,10 @@ import java.sql.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-public class sql {
+public class sqlNoten {
     Connection conn;
 
-    public sql() {
+    public sqlNoten() {
 
     }
 
@@ -14,7 +14,7 @@ public class sql {
     String password = "123";
 
     public static void main(String[] args) {
-        sql sql = new sql();
+        sqlNoten sqlNoten = new sqlNoten();
         //sql.getGradesMündlich("Deutsch");
         //sql.getGradesSchriftlich("Mathe");
         //System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));

@@ -12,7 +12,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JButton ergebnisseZeigen;
     private JPanel TablePanel;
 
-    sql sql;
+    sqlNoten sqlNoten;
 
     public static void main(String[] args)
     {
@@ -28,7 +28,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         Zurueck.addActionListener(this);
         Hinzufügen.addActionListener(this);
         ergebnisseZeigen.addActionListener(this);
-        sql=new sql();
+        sqlNoten =new sqlNoten();
 
 
 
@@ -53,20 +53,20 @@ public class NotenGUI extends JFrame implements ActionListener{
     public  JTable createTable()
     {
         String[] columnNames = {"Fach", "Notenschnitt Schriftlich","Notenschnitt Mündlich", "Kombiniert"};
-        Object[][] data = {{"Deutsch",sql.getGradesSchriftlich("Deutsch"),sql.getGradesMündlich("Deutsch"), sql.getGradesCombined("Deutsch")},
-                {"Mathe",sql.getGradesSchriftlich("Mathe"),sql.getGradesMündlich("Mathe"), sql.getGradesCombined("Mathe")},
-                {"Englisch",sql.getGradesSchriftlich("Englisch"),sql.getGradesMündlich("Englisch"), sql.getGradesCombined("Englisch")},
-                {"P-Seminar",sql.getGradesSchriftlich("P-Seminar"),sql.getGradesMündlich("P-Seminar"), sql.getGradesCombined("P-Seminar")},
-                {"W-Seminar",sql.getGradesSchriftlich("W-Seminar"),sql.getGradesMündlich("W-Seminar"), sql.getGradesCombined("W-Seminar")},
-                {"Informatik",sql.getGradesSchriftlich("Informatik"),sql.getGradesMündlich("Informatik"), sql.getGradesCombined("Informatik")},
-                {"Physik",sql.getGradesSchriftlich("Physik"),sql.getGradesMündlich("Physik"), sql.getGradesCombined("Physik")},
-                {"Wirtschaft",sql.getGradesSchriftlich("Wirtschaft"),sql.getGradesMündlich("Wirtschaft"), sql.getGradesCombined("Wirtschaft")},
-                {"Geographie",sql.getGradesSchriftlich("Geographie"),sql.getGradesMündlich("Geographie"), sql.getGradesCombined("Geographie")},
-                {"Geschichte",sql.getGradesSchriftlich("Geschichte"),sql.getGradesMündlich("Geschichte"), sql.getGradesCombined("Geschichte")},
-                {"Sozialkunde",sql.getGradesSchriftlich("Sozialkunde"),sql.getGradesMündlich("Sozialkunde"), sql.getGradesCombined("Sozialkunde")},
-                {"Französisch",sql.getGradesSchriftlich("Französisch"),sql.getGradesMündlich("Französisch"), sql.getGradesCombined("Französisch")},
-                {"Latein",sql.getGradesSchriftlich("Latein"),sql.getGradesMündlich("Latein"), sql.getGradesCombined("Latein")},
-                {"Russisch",sql.getGradesSchriftlich("Russisch"),sql.getGradesMündlich("Russisch"), sql.getGradesCombined("Russisch")}};
+        Object[][] data = {{"Deutsch", sqlNoten.getGradesSchriftlich("Deutsch"), sqlNoten.getGradesMündlich("Deutsch"), sqlNoten.getGradesCombined("Deutsch")},
+                {"Mathe", sqlNoten.getGradesSchriftlich("Mathe"), sqlNoten.getGradesMündlich("Mathe"), sqlNoten.getGradesCombined("Mathe")},
+                {"Englisch", sqlNoten.getGradesSchriftlich("Englisch"), sqlNoten.getGradesMündlich("Englisch"), sqlNoten.getGradesCombined("Englisch")},
+                {"P-Seminar", sqlNoten.getGradesSchriftlich("P-Seminar"), sqlNoten.getGradesMündlich("P-Seminar"), sqlNoten.getGradesCombined("P-Seminar")},
+                {"W-Seminar", sqlNoten.getGradesSchriftlich("W-Seminar"), sqlNoten.getGradesMündlich("W-Seminar"), sqlNoten.getGradesCombined("W-Seminar")},
+                {"Informatik", sqlNoten.getGradesSchriftlich("Informatik"), sqlNoten.getGradesMündlich("Informatik"), sqlNoten.getGradesCombined("Informatik")},
+                {"Physik", sqlNoten.getGradesSchriftlich("Physik"), sqlNoten.getGradesMündlich("Physik"), sqlNoten.getGradesCombined("Physik")},
+                {"Wirtschaft", sqlNoten.getGradesSchriftlich("Wirtschaft"), sqlNoten.getGradesMündlich("Wirtschaft"), sqlNoten.getGradesCombined("Wirtschaft")},
+                {"Geographie", sqlNoten.getGradesSchriftlich("Geographie"), sqlNoten.getGradesMündlich("Geographie"), sqlNoten.getGradesCombined("Geographie")},
+                {"Geschichte", sqlNoten.getGradesSchriftlich("Geschichte"), sqlNoten.getGradesMündlich("Geschichte"), sqlNoten.getGradesCombined("Geschichte")},
+                {"Sozialkunde", sqlNoten.getGradesSchriftlich("Sozialkunde"), sqlNoten.getGradesMündlich("Sozialkunde"), sqlNoten.getGradesCombined("Sozialkunde")},
+                {"Französisch", sqlNoten.getGradesSchriftlich("Französisch"), sqlNoten.getGradesMündlich("Französisch"), sqlNoten.getGradesCombined("Französisch")},
+                {"Latein", sqlNoten.getGradesSchriftlich("Latein"), sqlNoten.getGradesMündlich("Latein"), sqlNoten.getGradesCombined("Latein")},
+                {"Russisch", sqlNoten.getGradesSchriftlich("Russisch"), sqlNoten.getGradesMündlich("Russisch"), sqlNoten.getGradesCombined("Russisch")}};
         JTable table = new JTable(data, columnNames);
         table.setFillsViewportHeight(true);
 
@@ -91,7 +91,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     void addInput()
     {
-        sql.addGrade((String)FachWahl.getSelectedItem(), checkValue(), (String)Typ.getSelectedItem());
+        sqlNoten.addGrade((String)FachWahl.getSelectedItem(), checkValue(), (String)Typ.getSelectedItem());
     }
 
     int checkValue()
