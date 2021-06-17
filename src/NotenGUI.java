@@ -39,7 +39,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     void showTable()
     {
-        JFrame frame = new JFrame("JTable Test");
+        JFrame frame = new JFrame("Noten");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JTable table = createTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -57,11 +57,9 @@ public class NotenGUI extends JFrame implements ActionListener{
                 {"P-Seminar",sql.getGradesSchriftlich("P-Seminar"),sql.getGradesMündlich("P-Seminar"), sql.getGradesCombined("P-Seminar")},
                 {"W-Seminar",sql.getGradesSchriftlich("W-Seminar"),sql.getGradesMündlich("W-Seminar"), sql.getGradesCombined("W-Seminar")},
                 {"Informatik",sql.getGradesSchriftlich("Informatik"),sql.getGradesMündlich("Informatik"), sql.getGradesCombined("Informatik")},
-
                 {"Physik",sql.getGradesSchriftlich("Physik"),sql.getGradesMündlich("Physik"), sql.getGradesCombined("Physik")},
                 {"Wirtschaft",sql.getGradesSchriftlich("Wirtschaft"),sql.getGradesMündlich("Wirtschaft"), sql.getGradesCombined("Wirtschaft")},
                 {"Geographie",sql.getGradesSchriftlich("Geographie"),sql.getGradesMündlich("Geographie"), sql.getGradesCombined("Geographie")},
-
                 {"Geschichte",sql.getGradesSchriftlich("Geschichte"),sql.getGradesMündlich("Geschichte"), sql.getGradesCombined("Geschichte")},
                 {"Sozialkunde",sql.getGradesSchriftlich("Sozialkunde"),sql.getGradesMündlich("Sozialkunde"), sql.getGradesCombined("Sozialkunde")},
                 {"Französisch",sql.getGradesSchriftlich("Französisch"),sql.getGradesMündlich("Französisch"), sql.getGradesCombined("Französisch")},
