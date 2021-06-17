@@ -9,7 +9,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JComboBox FachWahl;
     private JButton Hinzufügen;
 
-    sql sql = new sql();
+    sql sql;
 
     public static void main(String[] args)
     {
@@ -24,6 +24,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+        sql=new sql();
 
 
 
@@ -48,7 +49,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     void addInput()
     {
-        sql.addGrade(this.FachWahl.GetItemText(this.FachWahl.SelectedItem), NotenEingabe.getText());
+        sql.addGrade((String)FachWahl.getSelectedItem(), Integer.parseInt(NotenEingabe.getText()), "dummy");
     }
 
     void addComponents()
