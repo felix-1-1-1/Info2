@@ -29,6 +29,8 @@ public class NotenGUI extends JFrame implements ActionListener{
         Hinzufügen.addActionListener(this);
         ergebnisseZeigen.addActionListener(this);
         sqlNoten =new sqlNoten();
+        this.setLocationRelativeTo(null);
+    this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
 
@@ -46,7 +48,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         frame.getContentPane().add(scrollPane);
         frame.pack();
         frame.setSize(500,350);
-
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 

@@ -107,10 +107,13 @@ String getDate()
     {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            String query = "INSERT INTO `noten` (`PK`,  `Fach`, `Datum`, `Punktzahl`, `Typ`) VALUES (NULL, '"+Fach+"', '"+getDate()+"', '"+Punktzahl+"', '"+Typ+"');";
-            Statement stmt = conn.createStatement();
-            stmt = conn.createStatement();
-            int rs = stmt.executeUpdate(query);
+            if(Punktzahl!=-1)
+            { String query = "INSERT INTO `noten` (`PK`,  `Fach`, `Datum`, `Punktzahl`, `Typ`) VALUES (NULL, '"+Fach+"', '"+getDate()+"', '"+Punktzahl+"', '"+Typ+"');";
+                Statement stmt = conn.createStatement();
+                stmt = conn.createStatement();
+                int rs = stmt.executeUpdate(query);}
+            else{}
+
 
 
 

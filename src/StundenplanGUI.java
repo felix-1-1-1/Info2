@@ -12,6 +12,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
     }
