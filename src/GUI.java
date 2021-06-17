@@ -12,9 +12,7 @@ public class GUI extends JFrame implements ActionListener {
     private JTree tree1;
     private JComboBox comboBox1;
 
-    public static void main(String[] args){
-        new GUI();
-    }
+
     public GUI()
     {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

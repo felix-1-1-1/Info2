@@ -13,13 +13,7 @@ public class sqlNoten {
     String user = "root";
     String password = "123";
 
-    public static void main(String[] args) {
-        sqlNoten sqlNoten = new sqlNoten();
-        //sql.getGradesMündlich("Deutsch");
-        //sql.getGradesSchriftlich("Mathe");
-        //System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
-        //sql.addGrade("Englisch",10, "Schriftlich");
-    }
+
 
 String getDate()
 {

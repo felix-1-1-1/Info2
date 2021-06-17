@@ -14,11 +14,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     sqlNoten sqlNoten;
 
-    public static void main(String[] args)
-    {
-        NotenGUI notenGUI = new NotenGUI();
 
-    }
 
     public NotenGUI() {
         setTitle("test");
