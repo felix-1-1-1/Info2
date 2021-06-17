@@ -50,8 +50,8 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     public  JTable createTable()
     {
-        String[] columnNames = {"Fach", "Notenschnitt"};
-        Object[][] data = {{"Deutsch",sql.getGradesSchriftlich("Deutsch"),"Englisch","P-Seminar","W-Seminar","Informatik","Physik","Wirtschaft","Geographie","Geschichte","Sozialkunde","Französisch","Latein","Russisch","Religion"},{"John", "Doe"}};
+        String[] columnNames = {"Fach", "Notenschnitt Schriftlich","Notenschnitt Mündlich", "Kombiniert"};
+        Object[][] data = {{"Deutsch",sql.getGradesSchriftlich("Deutsch"),sql.getGradesMündlich("Deutsch"), sql}};
         JTable table = new JTable(data, columnNames);
         table.setFillsViewportHeight(true);
 
