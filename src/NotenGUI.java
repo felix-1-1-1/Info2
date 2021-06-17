@@ -68,7 +68,7 @@ public class NotenGUI extends JFrame implements ActionListener{
                 {"Sozialkunde", sqlNoten.getGradesSchriftlich("Sozialkunde"), sqlNoten.getGradesMündlich("Sozialkunde"), sqlNoten.getGradesCombined("Sozialkunde")},
                 {"Französisch", sqlNoten.getGradesSchriftlich("Französisch"), sqlNoten.getGradesMündlich("Französisch"), sqlNoten.getGradesCombined("Französisch")},
                 {"Latein", sqlNoten.getGradesSchriftlich("Latein"), sqlNoten.getGradesMündlich("Latein"), sqlNoten.getGradesCombined("Latein")},
-                {"Russisch", sqlNoten.getGradesSchriftlich("Russisch"), sqlNoten.getGradesMündlich("Russisch"), sqlNoten.getGradesCombined("Russisch")}};
+                {"Russisch", sqlNoten.getGradesSchriftlich("Russisch"), sqlNoten.getGradesMündlich("Russisch"), sqlNoten.getGradesCombined("Russisch")},{"","","",""},{"Kombiniert:","","", sqlNoten.getGradesAll()}};
         JTable table = new JTable(data, columnNames);
         table.setFillsViewportHeight(true);
 
@@ -98,7 +98,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
     int checkValue()
     {
-        if(Integer.parseInt(NotenEingabe.getText())<15&&Integer.parseInt(NotenEingabe.getText())>0)
+        if(Integer.parseInt(NotenEingabe.getText())<=15&&Integer.parseInt(NotenEingabe.getText())>=0)
         {
             return  Integer.parseInt(NotenEingabe.getText());
         }

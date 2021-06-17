@@ -37,7 +37,7 @@ String getDate()
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
-            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich' GROUP BY Fach HAVING Fach=" + "'" + Fach + "'";
+            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich'AND FACH = " + "'" + Fach + "'";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -91,6 +91,37 @@ String getDate()
         }
 
         return averageSchriftl;
+    }
+
+    double getGradesAll() {
+
+
+        double avgAll = 0;
+
+
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+            String query = "SELECT  AVG(Punktzahl) FROM noten ";
+            Statement stmt = conn.createStatement();
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            int columns = rs.getMetaData().getColumnCount();
+
+
+            while (rs.next()) {
+                for (int i = 1; i <= columns; i++) {
+                    avgAll = rs.getDouble(1);
+                }
+            }
+            rs.close();
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+
+        return avgAll;
     }
 
 
