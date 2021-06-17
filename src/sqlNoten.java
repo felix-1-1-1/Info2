@@ -118,7 +118,7 @@ String getDate()
             System.out.println("fail");
         }
 
-        return avgAll;
+        return round(avgAll,2);
     }
 
 
