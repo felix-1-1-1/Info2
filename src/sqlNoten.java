@@ -53,7 +53,7 @@ String getDate()
             System.out.println("fail");
         }
 
-        return averageMündl;
+        return round(averageMündl, 2);
     }
 
     double getGradesSchriftlich(String Fach) {
@@ -84,7 +84,7 @@ String getDate()
             System.out.println("fail");
         }
 
-        return averageSchriftl;
+        return round(averageSchriftl,2);
     }
 
     double getGradesAll() {
@@ -95,7 +95,10 @@ String getDate()
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            String query = "SELECT  AVG(Punktzahl) FROM noten ";
+            String query = "select avg(mw) from\n" +
+                    "(SELECT avg(Punktzahl) as MW FROM `noten` WHERE typ = \"Mündlich\"\n" +
+                    "union ALL\n" +
+                    "SELECT  avg(Punktzahl) as MW FROM `noten` WHERE typ = \"Schriftlich\") as Untertab1";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -125,7 +128,7 @@ String getDate()
 
         averageCombined = (getGradesSchriftlich(Fach)+getGradesMündlich(Fach))/2;
 
-        return averageCombined;
+        return round(averageCombined,2);
     }
 
     void addGrade(String Fach, int Punktzahl, String Typ)
@@ -148,6 +151,12 @@ String getDate()
         }
     }
 
+
+    double round(double number, int digits)
+    {
+        double result = Math.round(number*Math.pow(10,digits))/Math.pow(10, digits);
+        return result;
+    }
 
 
     /**
