@@ -57,9 +57,14 @@
         </constraints>
         <properties>
           <model>
-            <item value="Test"/>
-            <item value="Test2"/>
-            <item value="Test3"/>
+            <item value="Mathe"/>
+            <item value="Deutsch"/>
+            <item value="Englisch"/>
+            <item value="Französisch"/>
+            <item value="Physik"/>
+            <item value="Informatik"/>
+            <item value="Latein"/>
+            <item value="Religion"/>
           </model>
         </properties>
       </component>
