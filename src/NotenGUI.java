@@ -9,7 +9,8 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JComboBox FachWahl;
     private JButton Hinzufügen;
     private JComboBox Typ;
-    private JTable table1;
+    private JTable NotenTabelle;
+    private JPanel TablePanel;
 
     sql sql;
 
@@ -25,6 +26,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         setSize(500, 500);
         addComponents();
         setVisible(true);
+        TablePanel.setVisible(true);
         Zurueck.addActionListener(this);
         Hinzufügen.addActionListener(this);
         sql=new sql();
