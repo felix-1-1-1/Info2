@@ -36,6 +36,7 @@ public class GUI extends JFrame implements ActionListener {
         }
         if(e.getSource() == Noten){
             NotenGUI noten = new NotenGUI();
+            noten.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             this.setVisible(false);        }
         if(e.getSource() == Stundenplan) {
             StundenplanGUI stundenplan = new StundenplanGUI();
