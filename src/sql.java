@@ -93,6 +93,14 @@ String getDate()
         return averageSchriftl;
     }
 
+    double getGradesCombined(String Fach) {
+        double averageCombined;
+
+        averageCombined = (getGradesSchriftlich(Fach)+getGradesMündlich(Fach))/2;
+
+        return averageCombined;
+    }
+
     void addGrade(String Fach, int Punktzahl, String Typ)
     {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {

@@ -60,16 +60,13 @@
         </constraints>
         <properties>
           <model>
-            <item value="Mathe"/>
             <item value="Deutsch"/>
+            <item value="Mathe"/>
             <item value="Englisch"/>
-            <item value="Französisch"/>
-            <item value="Physik"/>
-            <item value="Informatik"/>
-            <item value="Latein"/>
-            <item value="Religion"/>
             <item value="P-Seminar"/>
             <item value="W-Seminar"/>
+            <item value="Informatik"/>
+            <item value="Physik"/>
             <item value="Wirtschaft"/>
             <item value="Geographie"/>
             <item value="Geschichte"/>
