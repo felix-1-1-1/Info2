@@ -18,7 +18,7 @@ public class sql {
         //sql.getGradesMündlich("Deutsch");
         //sql.getGradesSchriftlich("Mathe");
         //System.out.println("Mündlich: " + sql.getGradesMündlich("Mathe") + "  " + "Schriftlich: " + sql.getGradesSchriftlich("Mathe"));
-        sql.addGrade("Englisch",10, "Schriftlich");
+        //sql.addGrade("Englisch",10, "Schriftlich");
     }
 
 String getDate()
