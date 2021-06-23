@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class StundenplanGUI extends JFrame implements ActionListener{
     private JButton Zurueck;
     private JPanel JPanel1;
-    private JButton showStundenplan;
+    sqlStundenplan sqlS = new sqlStundenplan();
 
     public StundenplanGUI() {
         setTitle("test");
@@ -13,8 +13,8 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
-        showStundenplan.addActionListener(this);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        showTable();
 
 
     }
@@ -23,10 +23,6 @@ public class StundenplanGUI extends JFrame implements ActionListener{
             GUI Gui = new GUI();
             this.setVisible(false);
         }
-        if(e.getSource() == showStundenplan){
-            showTable();
-        }
-
 
     }
     void addComponents()
@@ -51,7 +47,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
     public  JTable createTable()
     {
         String[] columnNames = {"Stunde", "Montag", "Dienstag","Mittwoch", "Donnerstag", "Freitag"};
-        Object[][] data = {{"1","2","3","4","5","6"}};
+        Object[][] data = {{"1",sqlS.getSubject(1,"Montag"),sqlS.getSubject(1,"Dienstag"),sqlS.getSubject(1,"Mittwoch"),sqlS.getSubject(1,"Donnerstag"),sqlS.getSubject(1,"Freitag")}};
         JTable table = new JTable(data, columnNames);
         table.setFillsViewportHeight(true);
 
