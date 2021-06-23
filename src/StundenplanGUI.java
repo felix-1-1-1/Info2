@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 public class StundenplanGUI extends JFrame implements ActionListener{
     private JButton Zurueck;
     private JPanel JPanel1;
+    private JButton showStundenplan;
 
     public StundenplanGUI() {
         setTitle("test");
@@ -12,8 +13,8 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
+        showStundenplan.addActionListener(this);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        showTable();
 
 
     }
@@ -22,6 +23,10 @@ public class StundenplanGUI extends JFrame implements ActionListener{
             GUI Gui = new GUI();
             this.setVisible(false);
         }
+        if(e.getSource() == showStundenplan){
+            showTable();
+        }
+
 
     }
     void addComponents()
