@@ -40,7 +40,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
 
     void showTable()
     {
-        JFrame frame = new JFrame("Noten");
+        JFrame frame = new JFrame("Stundenplan");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JTable table = createTable();
         JScrollPane scrollPane = new JScrollPane(table);
