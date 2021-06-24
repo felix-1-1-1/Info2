@@ -15,8 +15,8 @@ public class StundenplanGUI extends JFrame implements ActionListener{
     sqlStundenplan sqlS = new sqlStundenplan();
 
     public StundenplanGUI() {
-        setTitle("test");
-        setSize(600, 200);
+        setTitle("Stundenplan");
+        setSize(700, 150);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
