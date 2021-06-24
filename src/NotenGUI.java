@@ -43,7 +43,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         JScrollPane scrollPane = new JScrollPane(table);
         frame.getContentPane().add(scrollPane);
         frame.pack();
-        frame.setSize(500,350);
+        frame.setSize(500,400);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
