@@ -14,7 +14,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
 
     public StundenplanGUI() {
         setTitle("test");
-        setSize(500, 500);
+        setSize(600, 200);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
@@ -39,12 +39,16 @@ public class StundenplanGUI extends JFrame implements ActionListener{
             showTable();
 
         }
+        if(e.getSource()==Hinzufügen)
+        {
+            addInput();
+        }
 
     }
 
     void addInput()
     {
-        sqlStundenplan.alterTable((String)FachEingabe.getSelectedItem(), TagWahl.getSelectedItem(), 1);
+        sqlS.alterTable((String)FachEingabe.getText(), (String)TagWahl.getSelectedItem(), Integer.parseInt((String)StundenWahl.getSelectedItem()));
     }
     void addComponents()
     {
