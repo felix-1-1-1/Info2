@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="JPanel1" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="769" height="73"/>
+      <xy x="20" y="20" width="804" height="98"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -31,7 +31,7 @@
           <text value="Stundenplan Zeigen"/>
         </properties>
       </component>
-      <grid id="aab08" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="aab08" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -100,6 +100,33 @@
                 <item value="10"/>
                 <item value="11"/>
               </model>
+            </properties>
+          </component>
+          <component id="1d7e7" class="javax.swing.JLabel" binding="FachEingeben">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Hier Fach eingeben"/>
+              <verticalAlignment value="1"/>
+            </properties>
+          </component>
+          <component id="c7470" class="javax.swing.JLabel" binding="StundeAuswählen">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Hier Stunde auswählen"/>
+              <verticalAlignment value="1"/>
+            </properties>
+          </component>
+          <component id="b6ad9" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Hier Tag auswählen"/>
+              <verticalAlignment value="1"/>
             </properties>
           </component>
         </children>

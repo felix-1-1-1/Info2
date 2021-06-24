@@ -10,6 +10,8 @@ public class StundenplanGUI extends JFrame implements ActionListener{
     private JComboBox TagWahl;
     private JButton Hinzufügen;
     private JComboBox StundenWahl;
+    private JLabel FachEingeben;
+    private JLabel StundeAuswählen;
     sqlStundenplan sqlS = new sqlStundenplan();
 
     public StundenplanGUI() {
