@@ -109,7 +109,7 @@
         </constraints>
         <properties>
           <alignmentX value="0.5"/>
-          <text value="Note hinzufügen:"/>
+          <text value="Punktzahl eingeben:"/>
         </properties>
       </component>
     </children>
