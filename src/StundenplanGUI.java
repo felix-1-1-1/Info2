@@ -49,7 +49,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         JScrollPane scrollPane = new JScrollPane(table);
         frame.getContentPane().add(scrollPane);
         frame.pack();
-        frame.setSize(500,350);
+        frame.setSize(500,250);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

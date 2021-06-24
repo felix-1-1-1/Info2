@@ -8,6 +8,7 @@ public class sqlStundenplan {
     public static void main(String[] args) {
         sqlStundenplan sqlStundenplan = new sqlStundenplan();
         System.out.print(sqlStundenplan.getSubject(1, "Montag"));
+        sqlStundenplan.alterTable("", "Dienstag",11);
     }
 
     public sqlStundenplan() {
@@ -61,16 +62,14 @@ String getDate()
     }
 
 
-    void addGrade(String Fach, int Punktzahl, String Typ)
+    void alterTable(String Fach,String Tag ,int Stunde)
     {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-            if(Punktzahl!=-1)
-            { String query = "INSERT INTO `noten` (`PK`,  `Fach`, `Datum`, `Punktzahl`, `Typ`) VALUES (NULL, '"+Fach+"', '"+getDate()+"', '"+Punktzahl+"', '"+Typ+"');";
+            { String query = "INSERT INTO `"+Tag+"` (`PK`,  `Stunde`,  `Fach`) VALUES (NULL, '"+Stunde+"', '"+Fach+"');";
                 Statement stmt = conn.createStatement();
                 stmt = conn.createStatement();
                 int rs = stmt.executeUpdate(query);}
-            else{}
 
 
 
