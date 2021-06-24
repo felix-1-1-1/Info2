@@ -9,6 +9,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
     private JTextField FachEingabe;
     private JComboBox TagWahl;
     private JButton Hinzufügen;
+    private JComboBox StundenWahl;
     sqlStundenplan sqlS = new sqlStundenplan();
 
     public StundenplanGUI() {
@@ -18,6 +19,10 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         setVisible(true);
         Zurueck.addActionListener(this);
         showStundenplan.addActionListener(this);
+        FachEingabe.addActionListener(this);
+        TagWahl.addActionListener(this);
+        Hinzufügen.addActionListener(this);
+        StundenWahl.addActionListener(this);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
