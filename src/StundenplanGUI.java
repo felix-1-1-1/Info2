@@ -23,6 +23,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         TagWahl.addActionListener(this);
         Hinzufügen.addActionListener(this);
         StundenWahl.addActionListener(this);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 
