@@ -41,6 +41,11 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         }
 
     }
+
+    void addInput()
+    {
+        sqlStundenplan.alterTable((String)FachEingabe.getSelectedItem(), TagWahl.getSelectedItem(), 1);
+    }
     void addComponents()
     {
         add(JPanel1);
