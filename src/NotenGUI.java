@@ -66,6 +66,8 @@ public class NotenGUI extends JFrame implements ActionListener{
                 {"Latein", sqlNoten.getGradesSchriftlich("Latein"), sqlNoten.getGradesMündlich("Latein"), sqlNoten.getGradesCombined("Latein")},
                 {"Russisch", sqlNoten.getGradesSchriftlich("Russisch"), sqlNoten.getGradesMündlich("Russisch"), sqlNoten.getGradesCombined("Russisch")},{"","","",""},{"Kombiniert:","","", sqlNoten.getGradesAll()}};
         JTable table = new JTable(data, columnNames);
+        table.setDefaultEditor(Object.class, null);
+
         table.setFillsViewportHeight(true);
 
         return table;

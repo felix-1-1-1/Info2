@@ -86,6 +86,8 @@ public class StundenplanGUI extends JFrame implements ActionListener{
                 {"10",sqlS.getSubject(10,"Montag"),sqlS.getSubject(10,"Dienstag"),sqlS.getSubject(10,"Mittwoch"),sqlS.getSubject(10,"Donnerstag"),sqlS.getSubject(10,"Freitag")},
                 {"11",sqlS.getSubject(11,"Montag"),sqlS.getSubject(11,"Dienstag"),sqlS.getSubject(11,"Mittwoch"),sqlS.getSubject(11,"Donnerstag"),sqlS.getSubject(11,"Freitag")}};
         JTable table = new JTable(data, columnNames);
+        table.setDefaultEditor(Object.class, null);
+
         table.setFillsViewportHeight(true);
 
         return table;
