@@ -70,7 +70,7 @@ public class StundenplanGUI extends JFrame implements ActionListener{
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-
+    
     public  JTable createTable()
     {
         String[] columnNames = {"Stunde", "Montag", "Dienstag","Mittwoch", "Donnerstag", "Freitag"};
