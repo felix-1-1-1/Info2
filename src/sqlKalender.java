@@ -22,26 +22,26 @@ String getDate()
     return dtf.format(now);
 }
 
-    double getGradesMündlich(String Fach) {
+     Object[][] getDates() {
 
 
-        double averageMündl = 0;
 
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
-            String query = "SELECT Fach, AVG(Punktzahl) FROM noten WHERE Typ = 'Mündlich'AND FACH = " + "'" + Fach + "'";
+            String query = "SELECT  Datum,Termin, Erledigt FROM `kalendar` ORDER BY Datum ASC";
             Statement stmt = conn.createStatement();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
             int columns = rs.getMetaData().getColumnCount();
 
+            Object[][] dates = new Object[columns][];
 
             while (rs.next()) {
                 for (int i = 1; i <= columns; i++) {
-                    averageMündl = rs.getDouble(2);
+                    dates += {rs.getInt(i)}
 
                 }
             }
