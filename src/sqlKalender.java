@@ -11,7 +11,7 @@ public class sqlKalender {
 
     public static void main(String[] args) {
         sqlKalender sqlKalender = new sqlKalender();
-        System.out.println(sqlKalender.rowCount());
+        sqlKalender.printArray(sqlKalender.allDates());
     }
 
     String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
@@ -55,9 +55,9 @@ String getDate()
     }
 
 
-    void getDates() {
+    String[] allDates() {
 
-
+        String[] allDates = new String[3];
 
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
@@ -70,26 +70,29 @@ String getDate()
 
             int columns = rs.getMetaData().getColumnCount();
 
-            Object[][] dates = new Object[columns][];
 
-            while (rs.next()) {
-                for (int i = 1; i <= columns; i++) {
-
-                }
+            if(rs.next()) {
+                allDates[0] = rs.getString(1);
+                allDates[1] = rs.getString(2);
+                allDates[2] = rs.getString(3);
             }
+
             rs.close();
             stmt.close();
 
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-            System.out.println("fail");
-        }
 
+        }
+    return allDates;
     }
 
 
 
-
+    void printArray(String[] a)
+    {
+        for (int i = 0; i<a.length;i++)
+        {System.out.println(a[i]);}
+    }
 
 
 

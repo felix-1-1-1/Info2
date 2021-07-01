@@ -12,13 +12,14 @@ import javax.swing.table.DefaultTableModel;
 
     public class calenderTable {
         public static void main( String[] args ){
-            // Die Namen der Columns
+            sqlKalender sqlKalender = new sqlKalender();
+
             String[] titles = new String[]{ "Datum", "Termin", "Erledigt"};
 
             // Das Model das wir verwenden werden. Hier setzten wir gleich die
             // Titel, aber es ist später immer noch möglich weitere Columns oder
             // Rows hinzuzufügen.
-            final DefaultTableModel model = new DefaultTableModel( titles, 0 );
+            final DefaultTableModel model = new DefaultTableModel( titles, sqlKalender.rowCount() );
 
             // Das JTable initialisieren
             JTable table = new JTable( model );
