@@ -11,12 +11,18 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class test{
-    sqlKalender sqlK;
+    sqlKalender sqlKalender;
     public test()
     {
-    sqlK = new sqlKalender();}
+    sqlKalender = new sqlKalender();}
 
-    public static void main( String[] args ){
+    public static void main( String[] args ) {
+        test test = new test();
+        test.prepare();
+    }
+
+    void prepare()
+    {
 
         // Die Namen der Columns
         String[] titles = new String[]{ "Datum", "Termin", "Erledigt" };
@@ -43,7 +49,7 @@ public class test{
                 int size = model.getColumnCount();
 
                 // einen neuen Vector mit Daten herstellen
-                Vector newDatas = createDataVector( "row", size );
+                Vector newDatas = createDataVector(sqlKalender.allDates());
 
                 // eine neue Row hinzufügen
                 model.addRow( newDatas );
@@ -79,13 +85,21 @@ public class test{
         frame.setVisible( true );
     }
 
-    public static Vector createDataVector( String prefix, int size ){
-        Vector vector = new Vector( size );
-        for( int i = 0; i < 3; i++ )
-            vector.add( prefix + " : " + size + " : " + i );
 
-        return vector;
+
+
+    String[] copyData()
+    {
+        return sqlKalender.allDates();
     }
 
+    public  static Vector createDataVector(String[] s ){
+        Vector vector = new Vector( 3 );
+        String[] dummy = s;
+        for( int i = 0; i < 3; i++ )
+            vector.add(dummy[i]);
 
-}
+        return vector;
+    }}
+
+
