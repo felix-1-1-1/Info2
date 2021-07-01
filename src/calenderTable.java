@@ -10,7 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-    public class JTableDemo{
+    public class calenderTable {
         public static void main( String[] args ){
             // Die Namen der Columns
             String[] titles = new String[]{ "Datum", "Termin", "Erledigt"};

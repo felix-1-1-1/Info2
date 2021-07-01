@@ -9,6 +9,11 @@ public class sqlKalender {
 
     }
 
+    public static void main(String[] args) {
+        sqlKalender sqlKalender = new sqlKalender();
+        System.out.println(sqlKalender.rowCount());
+    }
+
     String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
     String user = "root";
     String password = "123";
@@ -21,6 +26,34 @@ String getDate()
     LocalDateTime now = LocalDateTime.now();
     return dtf.format(now);
 }
+
+    int rowCount() {
+
+        int rowCount = 0;
+
+
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+
+            String query = "SELECT COUNT(*)  FROM `kalendar` ";
+            Statement stmt = conn.createStatement();
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            if(rs.next())
+            {            rowCount = rs.getInt(1);
+            }
+
+            rs.close();
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+        return rowCount;
+    }
+
 
     void getDates() {
 
