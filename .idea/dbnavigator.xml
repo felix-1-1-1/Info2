@@ -31,7 +31,7 @@
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="5c57a9f3-4044-4920-8509-e9612d3aeed0">
-      <console name="Connection 1" type="STANDARD" schema="mysql" session="Main" />
+      <console name="Connection 1" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

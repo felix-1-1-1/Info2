@@ -32,7 +32,7 @@ public class GUI extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == Kalender){
-           KalenderGUI kalender = new KalenderGUI();
+           CalenderGUI kalender = new CalenderGUI();
            this.setVisible(false);
         }
         if(e.getSource() == Noten){
