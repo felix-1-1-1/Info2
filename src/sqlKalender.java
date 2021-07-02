@@ -57,7 +57,7 @@ String getDate()
 
     String[] allDates() {
 
-        String[] allDates = new String[3];
+        String[] allDates = new String[0];
 
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
@@ -69,13 +69,28 @@ String getDate()
             ResultSet rs = stmt.executeQuery(query);
 
             int columns = rs.getMetaData().getColumnCount();
+            allDates = new String[(columns)*rowCount()];
+            //if(rs.next()) {
+            //    System.out.println(rs.getString(1));
+            //}
+
+            int arrayIndex = 0;
+
+               for (int i = 0; i < rowCount(); i++) {
+                   while(rs.next()) {
+                        for (int ax = 0; ax < 2; ax++) {
+
+                            allDates[arrayIndex] = rs.getString("Datum");
+
+                            allDates[arrayIndex + 1] = rs.getString("Termin");
+
+                            allDates[arrayIndex + 2] = rs.getString("Erledigt");
+                        }
+                        arrayIndex += 3;
+                    }
+               }
 
 
-            if(rs.next()) {
-                allDates[0] = rs.getString(1);
-                allDates[1] = rs.getString(2);
-                allDates[2] = rs.getString(3);
-            }
 
             rs.close();
             stmt.close();

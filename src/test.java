@@ -10,70 +10,31 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class test{
+public class test {
     sqlKalender sqlKalender;
+    JFrame frame;
+    Container content;
+    JButton buttonAddRow;
+    JButton buttonRemRow;
+    JButton buttonAddCol;
+
     public test()
     {
-    sqlKalender = new sqlKalender();}
+        String[] titles = new String[]{"Datum", "Termin", "Erledigt"};
 
-    public static void main( String[] args ) {
-        test test = new test();
-        test.prepare();
-    }
+        final DefaultTableModel model = new DefaultTableModel(titles, 0);
 
-    void prepare()
-    {
+        JTable table = new JTable(model);
 
-        // Die Namen der Columns
-        String[] titles = new String[]{ "Datum", "Termin", "Erledigt" };
+        final JButton buttonAddRow = new JButton("add row");
+        final JButton buttonRemRow = new JButton("remove row");
+        final JButton buttonAddCol = new JButton("add column");
 
-        // Das Model das wir verwenden werden. Hier setzten wir gleich die
-        // Titel, aber es ist später immer noch möglich weitere Columns oder
-        // Rows hinzuzufügen.
-        final DefaultTableModel model = new DefaultTableModel( titles, 0 );
+        buttonRemRow.setEnabled(false);
+    sqlKalender = new sqlKalender();
+         frame = new JFrame( "Demo" );
 
-        // Das JTable initialisieren
-        JTable table = new JTable( model );
-
-        // Buttons, damit das alles schöner aussieht.
-        final JButton buttonAddRow = new JButton( "add row" );
-        final JButton buttonRemRow = new JButton( "remove row" );
-        final JButton buttonAddCol = new JButton( "add column" );
-
-        buttonRemRow.setEnabled( false );
-
-        // Den Buttons ein paar Reaktionen geben
-        buttonAddRow.addActionListener( new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                // Die Anzahl Columns (Breite) der Tabelle
-                int size = model.getColumnCount();
-
-                // einen neuen Vector mit Daten herstellen
-                Vector newDatas = createDataVector(sqlKalender.allDates());
-
-                // eine neue Row hinzufügen
-                model.addRow( newDatas );
-
-
-                // das Entfernen erlauben
-                buttonRemRow.setEnabled( true );
-            }
-        });
-
-
-        buttonRemRow.addActionListener( new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                int size = model.getRowCount();
-                int index = (int)(Math.random() * size);
-                model.removeRow( index );
-
-                buttonRemRow.setEnabled( size > 1 );
-            }
-        });
-
-        JFrame frame = new JFrame( "Demo" );
-
-        Container content = frame.getContentPane();
+         content = frame.getContentPane();
 
         content.add( new JScrollPane( table ), BorderLayout.CENTER );
         content.add( buttonAddRow, BorderLayout.NORTH );
@@ -82,8 +43,60 @@ public class test{
 
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         frame.pack();
-        frame.setVisible( true );
+        frame.setVisible( true );}
+
+    public static void main( String[] args ) {
+        test test = new test();
+        test.prepare();
     }
+
+    void prepare() {
+
+        String[] titles = new String[]{"Datum", "Termin", "Erledigt"};
+
+        final DefaultTableModel model = new DefaultTableModel(titles, 0);
+
+        JTable table = new JTable(model);
+
+        final JButton buttonAddRow = new JButton("add row");
+        final JButton buttonRemRow = new JButton("remove row");
+        final JButton buttonAddCol = new JButton("add column");
+
+        buttonRemRow.setEnabled(false);
+    }
+    void amendData() {
+        // Den Buttons ein paar Reaktionen geben
+        buttonAddRow.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Die Anzahl Columns (Breite) der Tabelle
+                int size = model.getColumnCount();
+
+                // einen neuen Vector mit Daten herstellen
+                Vector newDatas = createDataVector(sqlKalender.allDates());
+
+                // eine neue Row hinzufügen
+                model.addRow(newDatas);
+
+
+                // das Entfernen erlauben
+                buttonRemRow.setEnabled(true);
+            }
+        });
+
+
+        buttonRemRow.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int size = model.getRowCount();
+                int index = (int) (Math.random() * size);
+                model.removeRow(index);
+
+                buttonRemRow.setEnabled(size > 1);
+            }
+        });
+    }
+
+
+
 
 
 
@@ -93,13 +106,15 @@ public class test{
         return sqlKalender.allDates();
     }
 
-    public  static Vector createDataVector(String[] s ){
+
+    public  static Vector createDataVector(String[] s , int k){
         Vector vector = new Vector( 3 );
         String[] dummy = s;
-        for( int i = 0; i < 3; i++ )
+        for(int i = 0; i < 27; i++ )
             vector.add(dummy[i]);
 
         return vector;
-    }}
+    }
+}
 
 
