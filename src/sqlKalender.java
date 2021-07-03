@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.sql.*;
 
 public class sqlKalender {
@@ -84,7 +86,7 @@ public class sqlKalender {
     }
 
 
-    void printArray(String[] a) {
+    void printArray(String @NotNull [] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
