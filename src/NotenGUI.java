@@ -7,7 +7,7 @@ public class NotenGUI extends JFrame implements ActionListener{
     private JPanel JPanel1;
     private JTextField NotenEingabe;
     private JComboBox FachWahl;
-    private JButton Hinzufügen;
+    private JButton Hinzufuegen;
     private JComboBox Typ;
     private JButton ergebnisseZeigen;
     private JPanel TablePanel;
@@ -22,7 +22,7 @@ public class NotenGUI extends JFrame implements ActionListener{
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
-        Hinzufügen.addActionListener(this);
+        Hinzufuegen.addActionListener(this);
         ergebnisseZeigen.addActionListener(this);
         sqlNoten =new sqlNoten();
         this.setLocationRelativeTo(null);
@@ -81,7 +81,7 @@ public class NotenGUI extends JFrame implements ActionListener{
 
             this.setVisible(false);
         }
-        if(e.getSource() == Hinzufügen){
+        if(e.getSource() == Hinzufuegen){
             addInput();
         }
         if(e.getSource() == ergebnisseZeigen)
@@ -109,7 +109,5 @@ public class NotenGUI extends JFrame implements ActionListener{
         //add(button2);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }

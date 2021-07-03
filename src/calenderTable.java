@@ -51,8 +51,8 @@ public class calenderTable {
     }
 
 
-    public static Vector createDataVector(String[] schedule, int count) {
-        Vector vector = new Vector(3);
+    public static Vector<String> createDataVector(String[] schedule, int count) {
+        Vector<String> vector = new Vector<>(3);
         for (int i = 0; i < 3; i++)
             vector.add(schedule[i + count]);
         return vector;

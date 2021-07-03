@@ -152,12 +152,9 @@ String getDate()
     }
 
 
-    double round(double number, int digits)
-    {
-        double result = Math.round(number*Math.pow(10,digits))/Math.pow(10, digits);
-        return result;
+    double round(double number, int digits) {
+        return   Math.round(number * Math.pow(10, digits)) / Math.pow(10, digits);
     }
-
 
     /**
      *

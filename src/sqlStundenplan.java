@@ -83,8 +83,8 @@ String getDate()
 
     double round(double number, int digits)
     {
-        double result = Math.round(number*Math.pow(10,digits))/Math.pow(10, digits);
-        return result;
+        return Math.round(number*Math.pow(10,digits))/Math.pow(10, digits);
+
     }
 
 
