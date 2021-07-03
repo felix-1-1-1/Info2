@@ -9,7 +9,7 @@ public class KalenderGUI extends JFrame implements ActionListener{
 
     public KalenderGUI() {
         setTitle("Kalender");
-        setSize(500, 500);
+        setSize(300, 150);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
