@@ -1,11 +1,8 @@
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.util.Vector;
-
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.util.Arrays;
+import java.util.Vector;
 
 public class calenderTable {
     sqlKalender sqlKalender;
@@ -40,6 +37,11 @@ public class calenderTable {
         calenderTable.amendData();
     }
 
+    public static Vector<String> createDataVector(String[] schedule, int count) {
+        Vector<String> vector = new Vector<>(3);
+        vector.addAll(Arrays.asList(schedule).subList(count, 3 +  count));
+        return vector;
+    }
 
     void amendData() {
         int size = model.getColumnCount();
@@ -48,14 +50,6 @@ public class calenderTable {
             model.addRow(createDataVector(sqlKalender.allDates(), filler));
             filler += 3;
         }
-    }
-
-
-    public static Vector<String> createDataVector(String[] schedule, int count) {
-        Vector<String> vector = new Vector<>(3);
-        for (int i = 0; i < 3; i++)
-            vector.add(schedule[i + count]);
-        return vector;
     }
 }
 

@@ -7,6 +7,7 @@ public class sqlKalender {
     String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
     String user = "root";
     String password = "123";
+
     public sqlKalender() {
 
     }
@@ -26,7 +27,6 @@ public class sqlKalender {
 
             String query = "SELECT COUNT(*)  FROM `kalendar` ";
             Statement stmt = conn.createStatement();
-            stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
             if (rs.next()) {
@@ -52,7 +52,6 @@ public class sqlKalender {
 
             String query = "SELECT  Datum,Termin, Erledigt FROM `kalendar` ORDER BY Datum ASC";
             Statement stmt = conn.createStatement();
-            stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
             int columns = rs.getMetaData().getColumnCount();
@@ -87,14 +86,13 @@ public class sqlKalender {
 
 
     void printArray(String @NotNull [] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
+        for (String s : a) {
+            System.out.println(s);
         }
     }
 
 
-
-    }
+}
 
 
 

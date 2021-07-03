@@ -13,12 +13,11 @@ public class GUI extends JFrame implements ActionListener {
     private JComboBox comboBox1;
 
 
-    public GUI()
-    {
+    public GUI() {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         setTitle("Schulplaner");
-        setSize(500,200);
+        setSize(500, 200);
         addComponents();
         this.setLocationRelativeTo(null);
         setVisible(true);
@@ -27,25 +26,25 @@ public class GUI extends JFrame implements ActionListener {
         Stundenplan.addActionListener(this);
 
 
-
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == Kalender){
-           KalenderGUI kalender = new KalenderGUI();
-           this.setVisible(false);
+        if (e.getSource() == Kalender) {
+            KalenderGUI kalender = new KalenderGUI();
+            this.setVisible(false);
         }
-        if(e.getSource() == Noten){
+        if (e.getSource() == Noten) {
             NotenGUI noten = new NotenGUI();
             noten.setDefaultCloseOperation(EXIT_ON_CLOSE);
-            this.setVisible(false);        }
-        if(e.getSource() == Stundenplan) {
+            this.setVisible(false);
+        }
+        if (e.getSource() == Stundenplan) {
             StundenplanGUI stundenplan = new StundenplanGUI();
             this.setVisible(false);
         }
     }
-    void addComponents()
-    {
+
+    void addComponents() {
         add(panel1);
         //add(button2);
     }

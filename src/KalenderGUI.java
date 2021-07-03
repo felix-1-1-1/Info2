@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class KalenderGUI extends JFrame implements ActionListener{
+public class KalenderGUI extends JFrame implements ActionListener {
     private JButton Zurueck;
     private JPanel JPanel1;
     private JButton kalenderZeigenButton;
@@ -19,20 +19,20 @@ public class KalenderGUI extends JFrame implements ActionListener{
 
 
     }
+
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == Zurueck){
+        if (e.getSource() == Zurueck) {
             GUI Gui = new GUI();
             this.setVisible(false);
         }
-        if(e.getSource() == kalenderZeigenButton)
-        {
+        if (e.getSource() == kalenderZeigenButton) {
             calenderTable calenderTable = new calenderTable();
         }
 
     }
-    void addComponents()
-    {
+
+    void addComponents() {
         add(JPanel1);
         //add(button2);
     }
-    }
+}
