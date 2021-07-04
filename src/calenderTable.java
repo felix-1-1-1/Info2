@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class calenderTable {
     sqlKalender sqlKalender;
-    JFrame frame;
+    final JFrame frame;
     Container content;
     JTable table;
     DefaultTableModel model;
@@ -32,10 +32,6 @@ public class calenderTable {
         frame.setLocationRelativeTo(null);
     }
 
-    public static void main(String[] args) {
-        calenderTable calenderTable = new calenderTable();
-        calenderTable.amendData();
-    }
 
     public static Vector<String> createDataVector(String[] schedule, int count) {
         Vector<String> vector = new Vector<>(3);

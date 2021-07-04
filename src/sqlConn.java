@@ -16,7 +16,8 @@ public class sqlConn {
     void establishConnection() {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-        } catch (SQLException ex) {
+        } catch (SQLException ex) {            System.err.println(ex);
+
         }
     }
 }

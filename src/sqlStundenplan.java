@@ -11,11 +11,7 @@ public class sqlStundenplan {
 
     }
 
-    public static void main(String[] args) {
-        sqlStundenplan sqlStundenplan = new sqlStundenplan();
-        System.out.print(sqlStundenplan.getSubject(1, "Montag"));
-        sqlStundenplan.alterTable("", "Dienstag", 11);
-    }
+
 
     String getDate() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");

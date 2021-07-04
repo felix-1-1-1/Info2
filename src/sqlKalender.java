@@ -11,10 +11,6 @@ public class sqlKalender {
 
     }
 
-    public static void main(String[] args) {
-        sqlKalender sqlKalender = new sqlKalender();
-        sqlKalender.printArray(sqlKalender.allDates());
-    }
 
     int rowCount() {
 
@@ -36,6 +32,7 @@ public class sqlKalender {
             stmt.close();
 
         } catch (SQLException ex) {
+            System.err.println(ex);
         }
         return rowCount;
     }
@@ -77,7 +74,8 @@ public class sqlKalender {
             rs.close();
             stmt.close();
 
-        } catch (SQLException ex) {
+        } catch (SQLException ex) {            System.err.println(ex);
+
 
         }
         return allDates;
