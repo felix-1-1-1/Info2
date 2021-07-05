@@ -15,7 +15,7 @@ public class NotenGUI extends JFrame implements ActionListener {
 
 
     public NotenGUI() {
-        setTitle("test");
+        setTitle("Noten");
         setSize(550, 200);
         addComponents();
         setVisible(true);
