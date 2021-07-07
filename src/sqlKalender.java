@@ -92,7 +92,7 @@ public class sqlKalender {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
             {
-                String query = "INSERT INTO `kalendar` (`PI`, `Datum`, `Termin`, `Erledigt`) VALUES (NULL, '"+Datum+"', '"+Termin+"', 'Nein')";
+                String query = "INSERT INTO `kalendar` (`PI`, `Datum`, `Termin`) VALUES (NULL, '"+Datum+"', '"+Termin+"')";
                 Statement stmt = conn.createStatement();
                 int rs = stmt.executeUpdate(query);
             }

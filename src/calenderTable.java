@@ -12,7 +12,7 @@ public class calenderTable {
     DefaultTableModel model;
 
     public calenderTable() {
-        String[] titles = new String[]{"Datum", "Termin", "Erledigt"};
+        String[] titles = new String[]{"Datum", "Termin"};
 
         model = new DefaultTableModel(titles, 0);
 
@@ -34,10 +34,10 @@ public class calenderTable {
 
 
     public static Vector<String> createDataVector(String[] schedule, int count) {
-        Vector<String> vector = new Vector<>(3);
+        Vector<String> vector = new Vector<>(2);
 
         //überträgt String Array in Vektor
-        vector.addAll(Arrays.asList(schedule).subList(count, 3 +  count));
+        vector.addAll(Arrays.asList(schedule).subList(count, 2 +  count));
         return vector;
     }
 
@@ -48,7 +48,7 @@ public class calenderTable {
         int filler = 0;
         for (int i = 0; i < sqlKalender.rowCount(); i++) {
             model.addRow(createDataVector(sqlKalender.allDates(), filler));
-            filler += 3;
+            filler += 2;
         }
     }
     void clear()

@@ -42,14 +42,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="69cfc" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Datum eingeben YYYY-MM-DD:"/>
-        </properties>
-      </component>
       <component id="40563" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -72,6 +64,14 @@
         </constraints>
         <properties>
           <text value="Aktualisieren"/>
+        </properties>
+      </component>
+      <component id="69cfc" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Datum eingeben YYYY-MM-DD:"/>
         </properties>
       </component>
     </children>

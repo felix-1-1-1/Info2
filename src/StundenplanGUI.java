@@ -19,7 +19,7 @@ public class StundenplanGUI extends JFrame implements ActionListener {
 
     public StundenplanGUI() {
         setTitle("Stundenplan");
-        setSize(700, 150);
+        setSize(800, 150);
         addComponents();
         setVisible(true);
         Zurueck.addActionListener(this);
