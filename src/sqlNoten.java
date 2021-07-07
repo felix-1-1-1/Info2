@@ -1,6 +1,7 @@
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 public class sqlNoten {
     Connection conn;
@@ -160,6 +161,50 @@ public class sqlNoten {
             System.err.println(ex.getMessage());
             System.out.println("fail");
         }
+    }
+    public void dummy(int anzahl)
+    {
+        if(anzahl>=100)anzahl=99;
+        for(int i=0;i<anzahl;i++)
+        {
+            String mos="Schriftlich";
+            Random ran = new Random();
+            int grade = 00 + ran.nextInt(15 - 00 + 1);
+            int ms = ran.nextInt(2);
+            switch (ms)
+            {
+                case 0: mos = "Mündlich";break;
+                case 1: mos = "Schriftlich";break;
+            }
+            addGrade(randomFach(),grade,mos);
+
+        }
+
+
+    }
+    String randomFach()
+    {
+        String fach;
+        fach = "Informatik";
+        Random ran = new Random();
+        int x = ran.nextInt(14);
+        switch(x){
+            case 0: fach ="Deutsch"; break;
+            case 1: fach ="Mathe";break;
+            case 2: fach ="Englisch";break;
+            case 3: fach ="Physik";break;
+            case 4: fach ="P-Seminar";break;
+            case 5: fach ="W-Seminar";break;
+            case 6: fach ="Informatik";break;
+            case 7: fach ="Wirtschaft";break;
+            case 8: fach ="Geographie";break;
+            case 9: fach ="Geschichte";break;
+            case 10: fach ="Sozialkunde";break;
+            case 11: fach ="Französisch";break;
+            case 12: fach ="Latein";break;
+            case 13: fach ="Russisch";break;
+        }
+    return fach;
     }
 
 

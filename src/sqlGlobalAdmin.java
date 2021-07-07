@@ -4,8 +4,8 @@ public class sqlGlobalAdmin {
     String username;
     public sqlGlobalAdmin()
     {
-        adress= "jdbc:mysql://laptop-fz:3306/informatik projekt";
+        adress= "jdbc:mysql://localhost:3306/informatik projekt";
         username = "root";
-        password = "123";
+        password = "";
     }
 }

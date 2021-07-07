@@ -1,5 +1,6 @@
 
 import java.sql.*;
+import java.util.Random;
 
 public class sqlKalender {
     Connection conn;
@@ -123,6 +124,20 @@ public class sqlKalender {
             System.err.println(ex.getMessage());
             System.out.println("fail");
         }
+    }
+    public void dummy(int anzahl)
+    {
+       if(anzahl>=100)anzahl=99;
+       for(int i=0;i<anzahl;i++)
+       {
+           Random ran = new Random();
+           int year = 2000 + ran.nextInt(2100 - 2000 + 1);
+           int day = 01 + ran.nextInt(28 - 01 + 1);
+           int month = 01 + ran.nextInt(12 - 01 + 1);
+            addDate(year+"-"+month+"-"+day,"test"+i+rowCount());
+       }
+
+
     }
     }
 
