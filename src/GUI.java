@@ -18,7 +18,7 @@ public class GUI extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setTitle("Schulplaner");
-        setSize(500, 200);
+        setSize(300, 300);
         addComponents();
         this.setLocationRelativeTo(null);
         setVisible(true);
