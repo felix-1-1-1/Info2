@@ -143,7 +143,7 @@ public class sqlStundenplan {
         String fach;
         fach = "Informatik";
         Random ran = new Random();
-        int x = ran.nextInt(14);
+        int x = ran.nextInt(15);
         switch(x){
             case 0: fach ="Deutsch"; break;
             case 1: fach ="Mathe";break;
@@ -159,6 +159,7 @@ public class sqlStundenplan {
             case 11: fach ="Französisch";break;
             case 12: fach ="Latein";break;
             case 13: fach ="Russisch";break;
+            case 14: fach ="Sport";break;
         }
         return fach;
     }
