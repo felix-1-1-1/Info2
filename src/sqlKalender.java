@@ -46,7 +46,7 @@ public class sqlKalender {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
-            String query = "SELECT  Datum,Termin, Erledigt FROM `kalendar` ORDER BY Datum ASC";
+            String query = "SELECT  Datum,Termin FROM `kalendar` ORDER BY Datum ASC";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
@@ -58,15 +58,14 @@ public class sqlKalender {
 
             for (int i = 0; i < rowCount(); i++) {
                 while (rs.next()) {
-                    for (int ax = 0; ax < 2; ax++) {
+                    for (int ax = 0; ax < 1; ax++) {
 
                         allDates[arrayIndex] = rs.getString("Datum");
 
                         allDates[arrayIndex + 1] = rs.getString("Termin");
 
-                        allDates[arrayIndex + 2] = rs.getString("Erledigt");
                     }
-                    arrayIndex += 3;
+                    arrayIndex += 2;
                 }
             }
 
