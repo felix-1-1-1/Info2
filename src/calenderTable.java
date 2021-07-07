@@ -35,10 +35,14 @@ public class calenderTable {
 
     public static Vector<String> createDataVector(String[] schedule, int count) {
         Vector<String> vector = new Vector<>(3);
+
+        //überträgt String Array in Vektor
         vector.addAll(Arrays.asList(schedule).subList(count, 3 +  count));
         return vector;
     }
 
+
+    //Vektor zur Tabelle hinzufügen
     void amendData() {
         int size = model.getColumnCount();
         int filler = 0;
@@ -47,6 +51,11 @@ public class calenderTable {
             filler += 3;
         }
     }
+    void clear()
+    {
+        model.setRowCount(0);
+    }
+
 }
 
 

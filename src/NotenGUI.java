@@ -11,7 +11,9 @@ public class NotenGUI extends JFrame implements ActionListener {
     private JButton Hinzufuegen;
     private JComboBox Typ;
     private JButton ergebnisseZeigen;
+    private JButton aktualisierenButton;
     private JPanel TablePanel;
+    private JFrame frame;
 
 
     public NotenGUI() {
@@ -23,6 +25,7 @@ public class NotenGUI extends JFrame implements ActionListener {
         Hinzufuegen.addActionListener(this);
         ergebnisseZeigen.addActionListener(this);
         sqlNoten = new sqlNoten();
+        aktualisierenButton.addActionListener(this);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -30,7 +33,7 @@ public class NotenGUI extends JFrame implements ActionListener {
     }
 
     void showTable() {
-        JFrame frame = new JFrame("Noten");
+         frame = new JFrame("Noten");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JTable table = createTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -77,6 +80,11 @@ public class NotenGUI extends JFrame implements ActionListener {
             addInput();
         }
         if (e.getSource() == ergebnisseZeigen) {
+            showTable();
+        }
+        if(e.getSource()==aktualisierenButton)
+        {
+            frame.dispose();
             showTable();
         }
 

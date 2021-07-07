@@ -14,6 +14,8 @@ public class StundenplanGUI extends JFrame implements ActionListener {
     private JComboBox StundenWahl;
     private JLabel FachEingeben;
     private JLabel StundeAuswählen;
+    private JButton aktualisierenButton;
+    private JFrame frame;
 
     public StundenplanGUI() {
         setTitle("Stundenplan");
@@ -26,6 +28,7 @@ public class StundenplanGUI extends JFrame implements ActionListener {
         TagWahl.addActionListener(this);
         Hinzufügen.addActionListener(this);
         StundenWahl.addActionListener(this);
+        aktualisierenButton.addActionListener(this);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -44,6 +47,11 @@ public class StundenplanGUI extends JFrame implements ActionListener {
         if (e.getSource() == Hinzufügen) {
             addInput();
         }
+        if(e.getSource()==aktualisierenButton)
+        {
+            frame.dispose();
+            showTable();
+        }
 
     }
 
@@ -57,7 +65,7 @@ public class StundenplanGUI extends JFrame implements ActionListener {
     }
 
     void showTable() {
-        JFrame frame = new JFrame("Stundenplan");
+         frame = new JFrame("Stundenplan");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JTable table = createTable();
         JScrollPane scrollPane = new JScrollPane(table);

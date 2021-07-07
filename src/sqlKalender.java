@@ -88,6 +88,21 @@ public class sqlKalender {
         }
     }
 
+    void addDate( String Datum,String Termin) {
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+            {
+                String query = "INSERT INTO `kalendar` (`PI`, `Datum`, `Termin`, `Erledigt`) VALUES (NULL, '"+Datum+"', '"+Termin+"', 'Nein')";
+                Statement stmt = conn.createStatement();
+                int rs = stmt.executeUpdate(query);
+            }
+
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+    }
 
 }
 
