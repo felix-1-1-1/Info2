@@ -3,11 +3,17 @@ import java.sql.*;
 
 public class sqlKalender {
     Connection conn;
-    String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
-    String user = "root";
-    String password = "123";
+    String url ;
+    String user ;
+    String password;
+
+    sqlGlobalAdmin sGA;
 
     public sqlKalender() {
+        sGA = new sqlGlobalAdmin();
+        url = sGA.adress;
+        user = sGA.username;
+        password = sGA.password;
 
     }
 

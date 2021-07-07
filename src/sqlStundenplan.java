@@ -4,11 +4,16 @@ import java.time.format.DateTimeFormatter;
 
 public class sqlStundenplan {
     Connection conn;
-    String url = "jdbc:mysql://laptop-fz:3306/informatik projekt";
-    String user = "root";
-    String password = "123";
-    public sqlStundenplan() {
+    String url ;
+    String user ;
+    String password;
 
+    sqlGlobalAdmin sGA;
+    public sqlStundenplan() {
+        sGA = new sqlGlobalAdmin();
+        url = sGA.adress;
+        user = sGA.username;
+        password = sGA.password;
     }
 
 
