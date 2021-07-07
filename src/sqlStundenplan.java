@@ -73,5 +73,30 @@ public class sqlStundenplan {
         return Math.round(number * Math.pow(10, digits)) / Math.pow(10, digits);
 
     }
+    public void resetDay(String Tag)
+    {
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+            {
+                String query = "TRUNCATE `"+ Tag +"`";
+                Statement stmt = conn.createStatement();
+                int rs = stmt.executeUpdate(query);
+            }
+
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+    }
+    public void resetData()
+    {
+      resetDay("montag");
+      resetDay("dienstag");
+      resetDay("mittwoch");
+      resetDay("donnerstag");
+      resetDay("freitag");
+    }
+
 
 }

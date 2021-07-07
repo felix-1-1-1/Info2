@@ -102,8 +102,25 @@ public class sqlKalender {
             System.out.println("fail");
         }
     }
+    public void resetData()
+    {
+        try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
+            conn = conn2;
+            {
+                String query = "TRUNCATE `kalendar`";
+                Statement stmt = conn.createStatement();
+                int rs = stmt.executeUpdate(query);
+            }
 
-}
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            System.out.println("fail");
+        }
+    }
+    }
+
+
 
 
 

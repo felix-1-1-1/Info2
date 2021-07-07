@@ -7,6 +7,7 @@ public class GUI extends JFrame implements ActionListener {
     private JButton Kalender;
     private JButton Noten;
     private JButton Stundenplan;
+    private JButton ResetButton;
     private JPasswordField passwordField1;
     private JLabel label1;
     private JTree tree1;
@@ -24,6 +25,7 @@ public class GUI extends JFrame implements ActionListener {
         Kalender.addActionListener(this);
         Noten.addActionListener(this);
         Stundenplan.addActionListener(this);
+        ResetButton.addActionListener(this);
 
 
     }
@@ -40,6 +42,11 @@ public class GUI extends JFrame implements ActionListener {
         }
         if (e.getSource() == Stundenplan) {
             StundenplanGUI stundenplan = new StundenplanGUI();
+            this.setVisible(false);
+        }
+        if(e.getSource() == ResetButton)
+        {
+            ResetGUI reset = new ResetGUI();
             this.setVisible(false);
         }
     }
