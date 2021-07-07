@@ -131,13 +131,37 @@ public class sqlKalender {
        for(int i=0;i<anzahl;i++)
        {
            Random ran = new Random();
-           int year = 2000 + ran.nextInt(2100 - 2000 + 1);
+           int year = 2020 + ran.nextInt(2022 - 2020 + 1);
            int day = 01 + ran.nextInt(28 - 01 + 1);
            int month = 01 + ran.nextInt(12 - 01 + 1);
-            addDate(year+"-"+month+"-"+day,"test"+i+rowCount());
+            addDate(year+"-"+month+"-"+day,randomVeranstaltung());
        }
 
 
+    }
+    String randomVeranstaltung()
+    {
+        String fach;
+        fach = "Informatik";
+        Random ran = new Random();
+        int x = ran.nextInt(14);
+        switch(x){
+            case 0: fach ="Deutsch Test"; break;
+            case 1: fach ="Mathe Klausur";break;
+            case 2: fach ="Englisch Vokabeltest";break;
+            case 3: fach ="Physik Abfrage";break;
+            case 4: fach ="P-Seminar Treffen";break;
+            case 5: fach ="W-Seminar Besprechung";break;
+            case 6: fach ="Informatik Ex";break;
+            case 7: fach ="Wirtschaft Test";break;
+            case 8: fach ="Geographie Klausur";break;
+            case 9: fach ="Geschichte Exkursion";break;
+            case 10: fach ="Sozialkunde Ex";break;
+            case 11: fach ="Französisch Vokabeltest";break;
+            case 12: fach ="Latein Vokabeltest";break;
+            case 13: fach ="Russisch Vokabeltest";break;
+        }
+        return fach;
     }
     }
 

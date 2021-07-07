@@ -170,7 +170,7 @@ public class sqlNoten {
             String mos="Schriftlich";
             Random ran = new Random();
             int grade = 00 + ran.nextInt(15 - 00 + 1);
-            int ms = ran.nextInt(2);
+            int ms = ran.nextInt(2); // Mündlich oder Schriftliche Note
             switch (ms)
             {
                 case 0: mos = "Mündlich";break;

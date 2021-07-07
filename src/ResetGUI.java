@@ -44,7 +44,7 @@ public class ResetGUI extends JFrame implements ActionListener
             this.setVisible(false);
         }
         if (e.getSource() == dummyButton) {
-        sqlkalender.dummy(50);
+        sqlkalender.dummy(25);
         sqlnoten.dummy(80);
         sqlstundenplan.dummy();
         }
