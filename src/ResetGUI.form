@@ -39,10 +39,23 @@
       </component>
       <component id="474dc" class="javax.swing.JButton" binding="dummyButton">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="dummy Werte erzeugen"/>
+        </properties>
+      </component>
+      <component id="f37a2" class="javax.swing.JComboBox" binding="dummyBox2">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="für Alle"/>
+            <item value="für Noten"/>
+            <item value="für Stundenplan"/>
+            <item value="für Kalender"/>
+          </model>
         </properties>
       </component>
     </children>

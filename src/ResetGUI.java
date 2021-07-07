@@ -12,6 +12,7 @@ public class ResetGUI extends JFrame implements ActionListener
     private JPanel JPanel1;
     private JButton zurückButton;
     private JButton dummyButton;
+    private JComboBox dummyBox2;
     sqlNoten sqlnoten = new sqlNoten();
     sqlKalender sqlkalender = new sqlKalender();
     sqlStundenplan sqlstundenplan = new sqlStundenplan();
@@ -44,15 +45,33 @@ public class ResetGUI extends JFrame implements ActionListener
             this.setVisible(false);
         }
         if (e.getSource() == dummyButton) {
-        sqlkalender.dummy(25);
-        sqlnoten.dummy(80);
-        sqlstundenplan.dummy();
+        dummy((String)dummyBox2.getSelectedItem());
         }
 
         }
     public void addComponents()
     {
         add(JPanel1);
+    }
+    public void dummy(String x)
+    {
+        switch (x)
+        {
+            case "für Alle":
+                sqlkalender.dummy(25);
+                sqlnoten.dummy(80);
+                sqlstundenplan.dummy();
+                break;
+            case"für Noten":
+                sqlnoten.dummy(80);
+                break;
+            case"für Stundenplan":
+                sqlstundenplan.dummy();
+                break;
+            case"für Kalender":
+                sqlkalender.dummy(25);
+                break;
+        }
     }
     public void resetDatabase(String data)
     {
