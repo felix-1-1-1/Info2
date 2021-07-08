@@ -76,7 +76,7 @@ public class StundenplanGUI extends JFrame implements ActionListener {
         frame.setVisible(true);
     }
 
-    //Tabelle mit allen Studen und Tagen erstellen 11, Mo-Fr
+    //Tabelle mit allen Studen und Tagen erstellen 11, Mo-Frgf
     public JTable createTable() {
         String[] columnNames = {"Stunde", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"};
         Object[][] data = {{"1", sqlS.getSubject(1, "Montag"), sqlS.getSubject(1, "Dienstag"), sqlS.getSubject(1, "Mittwoch"), sqlS.getSubject(1, "Donnerstag"), sqlS.getSubject(1, "Freitag")},
