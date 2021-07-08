@@ -44,6 +44,7 @@ public class NotenGUI extends JFrame implements ActionListener {
         frame.setVisible(true);
     }
 
+    //Tabelle mit allen Fächern erstellen
     public JTable createTable() {
         String[] columnNames = {"Fach", "Notenschnitt Schriftlich", "Notenschnitt Mündlich", "Kombiniert"};
         Object[][] data = {{"Deutsch", sqlNoten.getGradesSchriftlich("Deutsch"), sqlNoten.getGradesMündlich("Deutsch"), sqlNoten.getGradesCombined("Deutsch")},
@@ -90,10 +91,13 @@ public class NotenGUI extends JFrame implements ActionListener {
 
     }
 
+    //Eingabe nutzen
     void addInput() {
         sqlNoten.addGrade((String) FachWahl.getSelectedItem(), checkValue(), (String) Typ.getSelectedItem());
     }
 
+
+    //Überprüfen ob Noten in der Spanne 0-15 liegen
     int checkValue() {
         if (Integer.parseInt(NotenEingabe.getText()) <= 15 && Integer.parseInt(NotenEingabe.getText()) >= 0) {
             return Integer.parseInt(NotenEingabe.getText());

@@ -12,14 +12,17 @@ public class calenderTable {
     DefaultTableModel model;
 
     public calenderTable() {
+        //Termin Tabelle mit Daten instanzieren und anzeigen
         String[] titles = new String[]{"Datum", "Termin"};
 
         model = new DefaultTableModel(titles, 0);
 
         JTable table = new JTable(model);
 
+
+        //Daten hinzufügen
         sqlKalender = new sqlKalender();
-        frame = new JFrame("Demo");
+        frame = new JFrame("Termine");
         content = frame.getContentPane();
         content.add(new JScrollPane(table), BorderLayout.CENTER);
 
@@ -44,7 +47,6 @@ public class calenderTable {
 
     //Vektor zur Tabelle hinzufügen
     void amendData() {
-        int size = model.getColumnCount();
         int filler = 0;
         for (int i = 0; i < sqlKalender.rowCount(); i++) {
             model.addRow(createDataVector(sqlKalender.allDates(), filler));

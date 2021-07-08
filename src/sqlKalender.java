@@ -11,6 +11,7 @@ public class sqlKalender {
     sqlGlobalAdmin sGA;
 
     public sqlKalender() {
+        //SQL Paramter Abrufen
         sGA = new sqlGlobalAdmin();
         url = sGA.adress;
         user = sGA.username;
@@ -23,7 +24,7 @@ public class sqlKalender {
 
         int rowCount = 0;
 
-
+        //Verbindung SQL Datenbank
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
@@ -34,6 +35,7 @@ public class sqlKalender {
             ResultSet rs = stmt.executeQuery(query);
 
             if (rs.next()) {
+                //Daten aus Abfrage abrufen
                 rowCount = rs.getInt(1);
             }
 
@@ -48,13 +50,14 @@ public class sqlKalender {
 
 
     String[] allDates() {
+        //Alle Termine in String Array ausgeben
 
         String[] allDates = new String[0];
 
 
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
-
+            //SQL Abfrage
             String query = "SELECT  Datum,Termin FROM `kalendar` WHERE Datum >= CURRENT_DATE() ORDER BY Datum ASC";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -64,7 +67,7 @@ public class sqlKalender {
 
 
             int arrayIndex = 0;
-
+            //Daten in Array kopieren
             for (int i = 0; i < rowCount(); i++) {
                 while (rs.next()) {
                     for (int ax = 0; ax < 1; ax++) {
@@ -89,13 +92,14 @@ public class sqlKalender {
         return allDates;
     }
 
-
+//Array ausgeben (Debug)
     void printArray(String  [] a) {
         for (String s : a) {
             System.out.println(s);
         }
     }
 
+    //Termin hinzufügen
     void addDate( String Datum,String Termin) {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
@@ -111,6 +115,7 @@ public class sqlKalender {
             System.out.println("fail");
         }
     }
+
     public void resetData()
     {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
@@ -147,22 +152,23 @@ public class sqlKalender {
         fach = "Informatik";
         Random ran = new Random();
         int x = ran.nextInt(14);
-        switch(x){
-            case 0: fach ="Deutsch Test"; break;
-            case 1: fach ="Mathe Klausur";break;
-            case 2: fach ="Englisch Vokabeltest";break;
-            case 3: fach ="Physik Abfrage";break;
-            case 4: fach ="P-Seminar Treffen";break;
-            case 5: fach ="W-Seminar Besprechung";break;
-            case 6: fach ="Informatik Ex";break;
-            case 7: fach ="Wirtschaft Test";break;
-            case 8: fach ="Geographie Klausur";break;
-            case 9: fach ="Geschichte Exkursion";break;
-            case 10: fach ="Sozialkunde Ex";break;
-            case 11: fach ="Französisch Vokabeltest";break;
-            case 12: fach ="Latein Vokabeltest";break;
-            case 13: fach ="Russisch Vokabeltest";break;
-        }
+        fach = switch (x) {
+            case 0 -> "Deutsch Test";
+            case 1 -> "Mathe Klausur";
+            case 2 -> "Englisch Vokabeltest";
+            case 3 -> "Physik Abfrage";
+            case 4 -> "P-Seminar Treffen";
+            case 5 -> "W-Seminar Besprechung";
+            case 6 -> "Informatik Ex";
+            case 7 -> "Wirtschaft Test";
+            case 8 -> "Geographie Klausur";
+            case 9 -> "Geschichte Exkursion";
+            case 10 -> "Sozialkunde Ex";
+            case 11 -> "Französisch Vokabeltest";
+            case 12 -> "Latein Vokabeltest";
+            case 13 -> "Russisch Vokabeltest";
+            default -> fach;
+        };
         return fach;
     }
     }

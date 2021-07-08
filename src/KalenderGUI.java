@@ -50,6 +50,8 @@ public class KalenderGUI extends JFrame implements ActionListener {
         //add(button2);
     }
 
+
+    //Input nutzen um Datenbank zu verändern
     void addSchedule()
     {
         sqlKalender.addDate(datumFeld.getText(), terminFeld.getText());

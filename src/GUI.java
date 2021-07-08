@@ -30,6 +30,7 @@ public class GUI extends JFrame implements ActionListener {
 
     }
 
+    //Andere Klassen öffnen (Kalender/Stundenplan/Noten)
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == Kalender) {
             KalenderGUI kalender = new KalenderGUI();
@@ -46,7 +47,7 @@ public class GUI extends JFrame implements ActionListener {
         }
         if(e.getSource() == ResetButton)
         {
-            ResetGUI reset = new ResetGUI();
+            adminGUI reset = new adminGUI();
             this.setVisible(false);
         }
     }

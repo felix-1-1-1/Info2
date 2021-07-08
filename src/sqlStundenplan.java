@@ -19,12 +19,8 @@ public class sqlStundenplan {
 
 
 
-    String getDate() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        return dtf.format(now);
-    }
 
+    //Fach mittels Stunde und Tag eindeutig abrufen
     String getSubject(int lesson, String day) {
 
         String result = "";
@@ -58,6 +54,7 @@ public class sqlStundenplan {
     }
 
 
+    //Kalender ändern
     void alterTable(String Fach, String Tag, int Stunde) {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
@@ -74,7 +71,7 @@ public class sqlStundenplan {
         }
     }
 
-
+    //Runden
     double round(double number, int digits) {
         return Math.round(number * Math.pow(10, digits)) / Math.pow(10, digits);
 
@@ -107,33 +104,43 @@ public class sqlStundenplan {
     {
         String tag;
         for(int j=0;j<5;j++) {
-        switch(j) {
-        case 0: tag = "Montag";
-            for (int i = 1; i < 12; i++) {
-                if(i==7)i=8;
-                alterTable(randomFach(),tag, i);
-            }break;
-            case 1: tag = "Dienstag";
-                for (int i = 1; i < 12; i++) {
-                    if(i==7)i=8;
-                    alterTable(randomFach(),tag, i);
-                }break;
-            case 2: tag = "Mittwoch";
-                for (int i = 1; i < 7; i++) {
-                    if(i==7)i=8;
-                    alterTable(randomFach(),tag, i);
-                }break;
-            case 3: tag = "Donnerstag";
-                for (int i = 1; i < 10; i++) {
-                    if(i==7)i=8;
-                    alterTable(randomFach(),tag, i);
-                }break;
-            case 4: tag = "Freitag";
-                for (int i = 1; i < 7; i++) {
-                    if(i==7)i=8;
-                    alterTable(randomFach(),tag, i);
-                }break;
-        }
+            switch (j) {
+                case 0 -> {
+                    tag = "Montag";
+                    for (int i = 1; i < 12; i++) {
+                        if (i == 7) i = 8;
+                        alterTable(randomFach(), tag, i);
+                    }
+                }
+                case 1 -> {
+                    tag = "Dienstag";
+                    for (int i = 1; i < 12; i++) {
+                        if (i == 7) i = 8;
+                        alterTable(randomFach(), tag, i);
+                    }
+                }
+                case 2 -> {
+                    tag = "Mittwoch";
+                    for (int i = 1; i < 7; i++) {
+                        if (i == 7) i = 8;
+                        alterTable(randomFach(), tag, i);
+                    }
+                }
+                case 3 -> {
+                    tag = "Donnerstag";
+                    for (int i = 1; i < 10; i++) {
+                        if (i == 7) i = 8;
+                        alterTable(randomFach(), tag, i);
+                    }
+                }
+                case 4 -> {
+                    tag = "Freitag";
+                    for (int i = 1; i < 7; i++) {
+                        if (i == 7) i = 8;
+                        alterTable(randomFach(), tag, i);
+                    }
+                }
+            }
     }
 
 
@@ -144,23 +151,24 @@ public class sqlStundenplan {
         fach = "Informatik";
         Random ran = new Random();
         int x = ran.nextInt(15);
-        switch(x){
-            case 0: fach ="Deutsch"; break;
-            case 1: fach ="Mathe";break;
-            case 2: fach ="Englisch";break;
-            case 3: fach ="Physik";break;
-            case 4: fach ="P-Seminar";break;
-            case 5: fach ="W-Seminar";break;
-            case 6: fach ="Informatik";break;
-            case 7: fach ="Wirtschaft";break;
-            case 8: fach ="Geographie";break;
-            case 9: fach ="Geschichte";break;
-            case 10: fach ="Sozialkunde";break;
-            case 11: fach ="Französisch";break;
-            case 12: fach ="Latein";break;
-            case 13: fach ="Russisch";break;
-            case 14: fach ="Sport";break;
-        }
+        fach = switch (x) {
+            case 0 -> "Deutsch";
+            case 1 -> "Mathe";
+            case 2 -> "Englisch";
+            case 3 -> "Physik";
+            case 4 -> "P-Seminar";
+            case 5 -> "W-Seminar";
+            case 6 -> "Informatik";
+            case 7 -> "Wirtschaft";
+            case 8 -> "Geographie";
+            case 9 -> "Geschichte";
+            case 10 -> "Sozialkunde";
+            case 11 -> "Französisch";
+            case 12 -> "Latein";
+            case 13 -> "Russisch";
+            case 14 -> "Sport";
+            default -> fach;
+        };
         return fach;
     }
 

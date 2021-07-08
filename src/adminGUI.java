@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 
 
-public class ResetGUI extends JFrame implements ActionListener
+public class adminGUI extends JFrame implements ActionListener
 {
     private JButton bestätigenButton;
     private JComboBox comboBox1;
@@ -18,7 +18,7 @@ public class ResetGUI extends JFrame implements ActionListener
     sqlStundenplan sqlstundenplan = new sqlStundenplan();
 
 
-    public ResetGUI()
+    public adminGUI()
     {
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -55,42 +55,28 @@ public class ResetGUI extends JFrame implements ActionListener
     }
     public void dummy(String x)
     {
-        switch (x)
-        {
-            case "für Alle":
+        switch (x) {
+            case "für Alle" -> {
                 sqlkalender.dummy(25);
                 sqlnoten.dummy(80);
                 sqlstundenplan.dummy();
-                break;
-            case"für Noten":
-                sqlnoten.dummy(80);
-                break;
-            case"für Stundenplan":
-                sqlstundenplan.dummy();
-                break;
-            case"für Kalender":
-                sqlkalender.dummy(25);
-                break;
+            }
+            case "für Noten" -> sqlnoten.dummy(80);
+            case "für Stundenplan" -> sqlstundenplan.dummy();
+            case "für Kalender" -> sqlkalender.dummy(25);
         }
     }
     public void resetDatabase(String data)
     {
-        switch (data)
-        {
-            case "Alles zurücksetzen":
+        switch (data) {
+            case "Alles zurücksetzen" -> {
                 sqlnoten.resetData();
                 sqlstundenplan.resetData();
                 sqlkalender.resetData();
-                break;
-            case"Noten zurücksetzen":
-                sqlnoten.resetData();
-                break;
-            case"Stundenplan zurücksetzen":
-                sqlstundenplan.resetData();
-                break;
-            case"Kalender zurücksetzen":
-                sqlkalender.resetData();
-                break;
+            }
+            case "Noten zurücksetzen" -> sqlnoten.resetData();
+            case "Stundenplan zurücksetzen" -> sqlstundenplan.resetData();
+            case "Kalender zurücksetzen" -> sqlkalender.resetData();
         }
     }
 

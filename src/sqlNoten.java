@@ -18,7 +18,8 @@ public class sqlNoten {
 
     }
 
-    String getDate() {
+    //Aktuelles Datum ausgeben
+    String getDate()  {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
@@ -171,10 +172,9 @@ public class sqlNoten {
             Random ran = new Random();
             int grade = 00 + ran.nextInt(15 - 00 + 1);
             int ms = ran.nextInt(2); // Mündlich oder Schriftliche Note
-            switch (ms)
-            {
-                case 0: mos = "Mündlich";break;
-                case 1: mos = "Schriftlich";break;
+            switch (ms) {
+                case 0 -> mos = "Mündlich";
+                case 1 -> mos = "Schriftlich";
             }
             addGrade(randomFach(),grade,mos);
 
@@ -188,22 +188,23 @@ public class sqlNoten {
         fach = "Informatik";
         Random ran = new Random();
         int x = ran.nextInt(14);
-        switch(x){
-            case 0: fach ="Deutsch"; break;
-            case 1: fach ="Mathe";break;
-            case 2: fach ="Englisch";break;
-            case 3: fach ="Physik";break;
-            case 4: fach ="P-Seminar";break;
-            case 5: fach ="W-Seminar";break;
-            case 6: fach ="Informatik";break;
-            case 7: fach ="Wirtschaft";break;
-            case 8: fach ="Geographie";break;
-            case 9: fach ="Geschichte";break;
-            case 10: fach ="Sozialkunde";break;
-            case 11: fach ="Französisch";break;
-            case 12: fach ="Latein";break;
-            case 13: fach ="Russisch";break;
-        }
+        fach = switch (x) {
+            case 0 -> "Deutsch";
+            case 1 -> "Mathe";
+            case 2 -> "Englisch";
+            case 3 -> "Physik";
+            case 4 -> "P-Seminar";
+            case 5 -> "W-Seminar";
+            case 6 -> "Informatik";
+            case 7 -> "Wirtschaft";
+            case 8 -> "Geographie";
+            case 9 -> "Geschichte";
+            case 10 -> "Sozialkunde";
+            case 11 -> "Französisch";
+            case 12 -> "Latein";
+            case 13 -> "Russisch";
+            default -> fach;
+        };
     return fach;
     }
 
