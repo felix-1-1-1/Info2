@@ -27,7 +27,9 @@ public class sqlKalender {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
-            String query = "SELECT COUNT(*)  FROM `kalendar` ";
+            //sql query and connection
+
+            String query = "SELECT COUNT(*)  FROM `kalendar`WHERE Datum >= CURRENT_DATE() ";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
@@ -53,7 +55,7 @@ public class sqlKalender {
         try (Connection conn2 = DriverManager.getConnection(url, user, password)) {
             conn = conn2;
 
-            String query = "SELECT  Datum,Termin FROM `kalendar` ORDER BY Datum ASC";
+            String query = "SELECT  Datum,Termin FROM `kalendar` WHERE Datum >= CURRENT_DATE() ORDER BY Datum ASC";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
