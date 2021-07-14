@@ -21,7 +21,7 @@ public class adminGUI extends JFrame implements ActionListener
     public adminGUI()
     {
 
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         bestätigenButton.addActionListener(this);
         zurückButton.addActionListener(this);
         dummyButton.addActionListener(this);
