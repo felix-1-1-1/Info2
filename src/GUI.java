@@ -38,7 +38,7 @@ public class GUI extends JFrame implements ActionListener {
         }
         if (e.getSource() == Noten) {
             NotenGUI noten = new NotenGUI();
-            noten.setDefaultCloseOperation(EXIT_ON_CLOSE);
+            noten.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             this.setVisible(false);
         }
         if (e.getSource() == Stundenplan) {
